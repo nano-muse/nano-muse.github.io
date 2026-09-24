@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>nanoMuse — a personal AI agent that lives on your phone</title>
+    <meta name="description" content="nanoMuse is an open-source personal AI agent inspired by Meta Muse. It runs entirely on your Android phone with your own model: a shell, a browser, MCP, skills, goals on a schedule, a feed written for you, and a stop before anything you could not undo." />
+    <meta property="og:title" content="nanoMuse — a personal AI agent that lives on your phone" />
+    <meta property="og:description" content="Open source, on-device, your model. Inspired by Meta Muse." />
+    <meta property="og:image" content="https://nano-muse.github.io/assets/cover.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nano-muse.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="canonical" href="https://nano-muse.github.io/" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="nanoMuse">
+        <img src="assets/mark.svg" alt="" width="28" height="28" />
+        <span>nanoMuse</span>
+      </a>
+      <nav class="links" aria-label="Sections">
+        <a href="#does"><i class="en">What it does</i><i class="zh">能做什么</i></a>
+        <a href="#how"><i class="en">How it works</i><i class="zh">怎么工作</i></a>
+        <a href="#versions"><i class="en">Versions</i><i class="zh">版本</i></a>
+        <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
+        <button class="lang" id="lang" type="button" aria-label="Switch language"><i class="en">中文</i><i class="zh">EN</i></button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">
+          <i class="en">Open source · GPL-3.0 · Android</i>
+          <i class="zh">开源 · GPL-3.0 · Android</i>
+        </p>
+        <h1>
+          <i class="en">A personal AI agent<br />that lives on your phone.</i>
+          <i class="zh">一个住在你手机里的<br />个人 AI 智能体。</i>
+        </h1>
+        <p class="lede">
+          <i class="en">
+            nanoMuse is an open-source take on Meta's Muse. One agent with a name and a face: it does things
+            instead of answering questions, keeps working while the app is closed, remembers you, and stops to
+            ask before anything you could not undo. Everything runs on the phone, with a model you bring.
+          </i>
+          <i class="zh">
+            nanoMuse 是 Meta Muse 的开源实现。一个有名字、有脸的智能体：它做事而不是只回答，App
+            关掉了也继续干活，记得你，遇到无法撤销的操作先停下来问你。一切都在手机上运行，模型由你决定。
+          </i>
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/nano-muse/nanoMuse/releases/latest" rel="noopener">
+            <i class="en">Download the APK</i><i class="zh">下载 APK</i>
+          </a>
+          <a class="btn" href="https://github.com/nano-muse/nanoMuse" rel="noopener">
+            <i class="en">View on GitHub</i><i class="zh">查看源码</i>
+          </a>
+        </div>
+        <p class="fine">
+          <i class="en">Android 8.0 or newer, arm64 · alpha 0.1.6 · every version is signed with the same key and installs over the last.</i>
+          <i class="zh">Android 8.0 以上，arm64 · alpha 0.1.6 · 每个版本同一把签名，覆盖安装即可升级。</i>
+        </p>
+      </section>
+
+      <figure class="moods">
+        <img src="assets/moods.webp" alt="The same red panda in five poses: at rest, working at a laptop with headphones, looking up with a question mark, hugging a star, and with a sweat drop" width="1696" height="320" loading="eager" />
+        <figcaption>
+          <i class="en">One face, drawn by your own image model, posed for every state — at rest, working, waiting for you, pleased, sorry.</i>
+          <i class="zh">一张脸，由你自己的图像模型画出，为每种状态摆好姿势——休息、工作、等你、开心、抱歉。</i>
+        </figcaption>
+      </figure>
+
+      <section class="shots" aria-label="Screens">
+        <figure>
+          <img src="assets/chat-approval.webp" alt="Chat: the agent stops before deleting files and asks" width="640" height="1422" loading="lazy" />
+          <figcaption><i class="en">It asks first</i><i class="zh">关键处先问你</i></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/feed.webp" alt="Feed: three posts written for you this morning" width="640" height="1422" loading="lazy" />
+          <figcaption><i class="en">A feed written for you</i><i class="zh">写给你的动态</i></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/goals.webp" alt="Goals: a tracked goal and two routines" width="640" height="1422" loading="lazy" />
+          <figcaption><i class="en">Goals, on a schedule</i><i class="zh">目标，按时检查</i></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/avatar.webp" alt="Avatar: describe a face, pick one of four" width="640" height="1422" loading="lazy" />
+          <figcaption><i class="en">A face you choose</i><i class="zh">你挑的脸</i></figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="does">
+        <h2><i class="en">What it does</i><i class="zh">能做什么</i></h2>
+        <ul>
+          <li>
+            <h3><i class="en">Does things</i><i class="zh">动手做事</i></h3>
+            <p>
+              <i class="en">A Linux shell, a browser, MCP servers, skills, and the apps on your phone through their screens when there is no API. It picks the hand the job needs.</i>
+              <i class="zh">Linux shell、浏览器、MCP、技能，以及在没有 API 时通过屏幕操作手机上的 App。它自己挑合适的那只手。</i>
+            </p>
+          </li>
+          <li>
+            <h3><i class="en">Asks first</i><i class="zh">关键处先问</i></h3>
+            <p>
+              <i class="en">A stop before deleting, sending or paying, scoped to once, this chat or always — per recipient, domain or folder. Passwords and codes are always yours to type.</i>
+              <i class="zh">删除、发送、付款前先停下：只此一次、本次对话或一直允许，按收件人、域名、目录记住。密码和验证码永远由你输入。</i>
+            </p>
+          </li>
+          <li>
+            <h3><i class="en">Keeps going</i><i class="zh">一直在干</i></h3>
+            <p>
+              <i class="en">Goals checked on a schedule in their own conversation, routines that run while the app is closed, the screen kept awake when it drives the phone, and a "continue?" instead of an early wrap-up.</i>
+              <i class="zh">目标在自己的会话里按时检查，例程在 App 关着时照跑，操作手机时屏幕不灭，到步数上限问「继续？」而不是草草收尾。</i>
+            </p>
+          </li>
+          <li>
+            <h3><i class="en">Writes you a feed</i><i class="zh">写给你的动态</i></h3>
+            <p>
+              <i class="en">Every morning, a few short posts from what it knows about you and what you asked it to follow. Steer it with one sentence.</i>
+              <i class="zh">每天早上几条短帖，来自它对你的了解和你让它盯的事。一句话就能调它的方向。</i>
+            </p>
+          </li>
+          <li>
+            <h3><i class="en">Remembers you</i><i class="zh">记得你</i></h3>
+            <p>
+              <i class="en">Who it is, what it knows about you, what it remembers and when it wakes are four Markdown files you can read and edit. Bring what another assistant knew.</i>
+              <i class="zh">它是谁、知道你什么、记住了什么、什么时候醒，是四个你能看能改的 Markdown 文件。别的助手记住的你，可以直接带过来。</i>
+            </p>
+          </li>
+          <li>
+            <h3><i class="en">Has a face</i><i class="zh">有一张脸</i></h3>
+            <p>
+              <i class="en">Describe one, your image model draws four, you pick. It breathes at rest, bobs while it works, tilts when it needs you, pops when a task lands.</i>
+              <i class="zh">描述一句，你的图像模型画四张，你挑一张。休息时呼吸，工作时点头，需要你时歪头，任务完成时跳一下。</i>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="how" id="how">
+        <h2><i class="en">How it works</i><i class="zh">怎么工作</i></h2>
+        <div class="cols">
+          <div>
+            <h3><i class="en">On the phone</i><i class="zh">在手机上</i></h3>
+            <p>
+              <i class="en">Built on <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a>: a Linux root file system under proot, a shell, a browser, MCP, skills, scheduled tasks and an accessibility executor — inside the APK, no server, no cloud VM. Your files and memory never leave the device.</i>
+              <i class="zh">基于 <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a>：proot 下的 Linux 根文件系统、shell、浏览器、MCP、技能、定时任务和无障碍执行器——都在 APK 里，没有服务器，没有云端虚拟机。你的文件和记忆不离开手机。</i>
+            </p>
+          </div>
+          <div>
+            <h3><i class="en">Your model</i><i class="zh">你的模型</i></h3>
+            <p>
+              <i class="en">Any OpenAI-compatible endpoint, or the OAuth sign-ins the app ships with. Messages go only to the model you configured; the avatar is drawn by an image model on the same account.</i>
+              <i class="zh">任何 OpenAI 兼容的接口，或 App 自带的 OAuth 登录。消息只发给你配置的模型；形象也由同一账号下的图像模型来画。</i>
+            </p>
+          </div>
+          <div>
+            <h3><i class="en">Open</i><i class="zh">开放</i></h3>
+            <p>
+              <i class="en">GPL-3.0-or-later, one small version at a time, each an installable APK with its notes. Not affiliated with Meta; Muse is a trademark of Meta Platforms, Inc.</i>
+              <i class="zh">GPL-3.0-or-later，按小版本逐个发布，每个都是能装的 APK 并附说明。与 Meta 无关；Muse 是 Meta Platforms, Inc. 的商标。</i>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="versions" id="versions">
+        <h2><i class="en">Versions</i><i class="zh">版本</i></h2>
+        <ol>
+          <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.1" rel="noopener">0.1.1</a><span class="name">换皮</span><span class="what"><i class="en">OpenMinis as nanoMuse — icon, name, colours, one signing key.</i><i class="zh">OpenMinis 变成 nanoMuse——图标、名字、配色、一把签名。</i></span></li>
+          <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.2" rel="noopener">0.1.2</a><span class="name">有名字有脸</span><span class="what"><i class="en">A name and a face; a first conversation that names the agent.</i><i class="zh">有了名字和脸；第一次对话里给它起名。</i></span></li>
+          <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.3" rel="noopener">0.1.3</a><span class="name">Muse 的形状</span><span class="what"><i class="en">Opens on a chat; Ideas, Goals and Library; side chats in a drawer.</i><i class="zh">打开就是对话；点子、目标、资料库；旁聊在抽屉里。</i></span></li>
+          <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.4" rel="noopener">0.1.4</a><span class="name">关键处先问你</span><span class="what"><i class="en">Approvals with scope before deleting, sending, paying.</i><i class="zh">删除、发送、付款前带范围的审批。</i></span></li>
+          <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.5" rel="noopener">0.1.5</a><span class="name">记得你</span><span class="what"><i class="en">The feed, the system files, memory import, "continue?".</i><i class="zh">动态、系统文件、记忆导入、「继续？」。</i></span></li>
+          <li class="current"><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.6" rel="noopener">0.1.6</a><span class="name">形象与动效</span><span class="what"><i class="en">A face you choose, posed and animated; motion everywhere.</i><i class="zh">你挑的脸，有姿势有动作；处处有动效。</i></span></li>
+          <li class="next"><span class="ver">0.2.0</span><span class="name">beta</span><span class="what"><i class="en">Polish from the first weeks of use; the first beta.</i><i class="zh">头几周使用后的打磨；第一个 beta。</i></span></li>
+        </ol>
+        <p class="more">
+          <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/roadmap.md" rel="noopener"><i class="en">Roadmap: the phone now, the web on a VM of your own next, the desktop after</i><i class="zh">路线图：现在是手机，然后是你自己的云端 VM 上的网页版，再之后是桌面</i> →</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer">
+        <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
+        <a href="https://github.com/nano-muse/nanoMuse/releases" rel="noopener"><i class="en">Releases</i><i class="zh">发布</i></a>
+        <a href="https://github.com/nano-muse/nanoMuse/blob/main/CHANGELOG.md" rel="noopener">Changelog</a>
+        <a href="https://github.com/nano-muse/nanoMuse/blob/main/CONTRIBUTING.md" rel="noopener"><i class="en">Contributing</i><i class="zh">参与</i></a>
+        <a href="https://github.com/nano-muse/nanoMuse/blob/main/LICENSE" rel="noopener">GPL-3.0</a>
+      </nav>
+      <p>
+        <i class="en">nanoMuse is an independent community project, not affiliated with or endorsed by Meta Platforms, Inc. Based on OpenMinis 1.13 (GPL-3.0), modified since 2026-09-24.</i>
+        <i class="zh">nanoMuse 是独立的社区项目，与 Meta Platforms, Inc. 无关，也未获其背书。基于 OpenMinis 1.13（GPL-3.0），自 2026-09-24 起修改。</i>
+      </p>
+    </footer>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var saved = localStorage.getItem("nm-lang");
+        var lang = saved || ((navigator.language || "").toLowerCase().indexOf("zh") === 0 ? "zh" : "en");
+        function apply(l) {
+          root.lang = l === "zh" ? "zh-CN" : "en";
+          root.setAttribute("data-lang", l);
+          document.title = l === "zh" ? "nanoMuse — 一个住在你手机里的个人 AI 智能体" : "nanoMuse — a personal AI agent that lives on your phone";
+        }
+        apply(lang);
+        document.getElementById("lang").addEventListener("click", function () {
+          lang = lang === "zh" ? "en" : "zh";
+          localStorage.setItem("nm-lang", lang);
+          apply(lang);
+        });
+      })();
+    </script>
+  </body>
+</html>
