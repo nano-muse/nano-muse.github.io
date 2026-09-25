@@ -142,7 +142,8 @@ section .sub { max-width: 720px; margin: 14px auto 0; text-align: center; color:
 .compare tbody td:last-child { color: var(--fg); }
 
 .how { padding: clamp(80px, 11vw, 140px) 0 0; }
-.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px; }
+.cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(24px, 3vw, 40px); margin-top: 40px; }
+@media (max-width: 1000px) { .cols { grid-template-columns: repeat(2, 1fr); } }
 .cols p { margin: 10px 0 0; color: var(--fg-2); font-size: 15.5px; line-height: 1.55; }
 @media (max-width: 760px) { .cols { grid-template-columns: 1fr; gap: 28px; } }
 

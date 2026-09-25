@@ -147,8 +147,8 @@
           <li>
             <h3><i class="en">Does things</i><i class="zh">动手做事</i></h3>
             <p>
-              <i class="en">A Linux shell, a browser, MCP servers, skills, and — with the accessibility service on — the apps on your phone through their screens, using the accessibility CLI OpenMinis ships. It picks the hand the job needs.</i>
-              <i class="zh">Linux shell、浏览器、MCP、技能；开了无障碍服务后，还能用 OpenMinis 自带的无障碍 CLI，通过屏幕操作手机上的 App。用哪只手，它自己挑。</i>
+              <i class="en">A Linux shell, a browser, MCP servers, skills in the Agent Skills format, and — with Hands on — the apps on your phone through their screens: a screenshot, one action, another screenshot, APIs tried first, a take-over for logins, the same approvals. It picks the hand the job needs and shows each step as a card you can open.</i>
+              <i class="zh">Linux shell、浏览器、MCP 服务、Agent Skills 格式的技能；打开「动手操作屏幕」后，还能通过屏幕操作手机上的 App：看一张截图、做一步、再看一张，先试 API 再上屏幕，登录由你接管，审批一样不少。用哪只手它自己挑，每一步都是一张能点开的卡片。</i>
             </p>
           </li>
           <li>
@@ -195,22 +195,29 @@
           <div>
             <h3><i class="en">On the phone</i><i class="zh">在手机上</i></h3>
             <p>
-              <i class="en">Built on <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a>: a Linux root file system under proot, a shell, a browser, MCP, skills, scheduled tasks and an accessibility executor — inside the APK, no server, no cloud VM. Your files and memory never leave the device.</i>
-              <i class="zh">基于 <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a>：proot 下的 Linux 根文件系统、shell、浏览器、MCP、技能、定时任务和无障碍执行器——都在 APK 里，没有服务器，没有云端虚拟机。你的文件和记忆不离开手机。</i>
+              <i class="en">The app is <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 1.13, modified: a complete on-device agent — Alpine Linux under proot, a shell, a WebView browser, MCP, skills, scheduled tasks, the accessibility service — with the home, the memory, the goals, the feed and the guardrails nanoMuse adds on top. All inside the APK: no server, no account, no cloud VM. Files, memory and the avatar's pictures stay in the app's private storage.</i>
+              <i class="zh">App 是修改过的 <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 1.13：一个完整的端侧智能体——proot 下的 Alpine Linux、shell、WebView 浏览器、MCP、技能、定时任务、无障碍服务——nanoMuse 在上面加了主页、记忆、目标、动态和审批。全在 APK 里：没有服务器，不用注册账号，没有云端虚拟机。文件、记忆和形象的图片都留在 App 自己的私有存储里。</i>
             </p>
           </div>
           <div>
-            <h3><i class="en">Your model</i><i class="zh">你的模型</i></h3>
+            <h3><i class="en">Many hands, one ladder</i><i class="zh">很多只手，一把梯子</i></h3>
             <p>
-              <i class="en">Any OpenAI-compatible endpoint, or the OAuth sign-ins the app ships with. Messages go only to the model you configured; the avatar is drawn by an image model on the same account.</i>
-              <i class="zh">任何 OpenAI 兼容接口，或者 App 自带的 OAuth 登录。消息只发给你配置的模型；形象也由你自己配的图像模型来画。</i>
+              <i class="en">For each task the agent climbs a ladder: a skill, a CLI or an MCP server first; then the browser; and, with <em>Hands</em> switched on, the phone's own screen — a screenshot, one action, another screenshot, never the accessibility tree. Pair a computer (one Python file, a six-digit code) and a sentence on the phone runs there: its shell, its files, its browser, a look at its screen. Whichever hand, the same approval comes before deleting, sending or paying.</i>
+              <i class="zh">每个任务它顺着一把梯子往上试：先是技能、CLI 或 MCP 服务，再是浏览器，最后——打开「动手操作屏幕」之后——是手机自己的屏幕：看一张截图、做一步、再看一张，不读无障碍树。配对一台电脑（跑一个 Python 文件、填六位配对码），手机上的一句话就在那边执行：它的终端、文件、浏览器，看一眼它的屏幕。不管哪只手，删除、发送、付款前都过同一道审批。</i>
+            </p>
+          </div>
+          <div>
+            <h3><i class="en">Your models</i><i class="zh">你的模型</i></h3>
+            <p>
+              <i class="en">Any OpenAI-compatible endpoint with your own key, or the OAuth sign-ins the app ships with. Three models, named — chat, image, video: one Alibaba Cloud Model Studio key for all three, or a provider per model. Image and video are optional, and the agent tells you when one is missing; Hands needs a chat model that can read a screenshot. Messages go only to the models you configured.</i>
+              <i class="zh">任何 OpenAI 兼容接口配你自己的 key，或者 App 自带的 OAuth 登录。三个模型分开说——对话、图像、视频：一把阿里云百炼的 key 跑三个，或者每个模型各接一家。图像和视频可选，缺哪个它会开口告诉你；「动手操作屏幕」需要一个能看图的对话模型。消息只发给你配置的模型。</i>
             </p>
           </div>
           <div>
             <h3><i class="en">Open</i><i class="zh">开放</i></h3>
             <p>
-              <i class="en">GPL-3.0-or-later, one small version at a time, each an installable APK with its notes. Not affiliated with Meta; Muse is a trademark of Meta Platforms, Inc.</i>
-              <i class="zh">GPL-3.0-or-later；按小版本逐个发布，每个版本都是可安装的 APK，附更新说明。与 Meta 无关；Muse 是 Meta Platforms, Inc. 的商标。</i>
+              <i class="en">GPL-3.0-or-later, the whole repository, every edit to upstream marked. One small version per stage, each a GitHub release built from its tag, signed with the same key, installed by hand over the last. Not affiliated with Meta; Muse is a trademark of Meta Platforms, Inc.</i>
+              <i class="zh">整个仓库 GPL-3.0-or-later，对上游的每处修改都有标记。一个阶段一个小版本，每个都是从对应 tag 构建的 GitHub Release，同一把签名，手动覆盖安装。与 Meta 无关；Muse 是 Meta Platforms, Inc. 的商标。</i>
             </p>
           </div>
         </div>
