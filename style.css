@@ -163,6 +163,15 @@ section .sub { max-width: 720px; margin: 14px auto 0; text-align: center; color:
 }
 html[data-lang="zh"] .versions .current .name::after { content: "最新"; }
 .versions .next { color: var(--fg-2); }
+.versions li[hidden] { display: none; }
+.versions .earlier { display: block; padding: 0; }
+.versions .earlier button {
+  display: block; width: 100%; padding: 14px 4px; border: 0; background: none; cursor: pointer;
+  font: inherit; font-size: 14.5px; font-weight: 600; color: var(--action); text-align: center;
+}
+.versions .earlier button:hover { text-decoration: underline; }
+.versions .earlier .hide, .versions .earlier.open .show { display: none; }
+.versions .earlier.open .hide { display: inline; }
 .versions .more { text-align: center; margin: 28px 0 0; font-size: 15px; }
 .versions .more a { color: var(--action); }
 @media (max-width: 560px) {
