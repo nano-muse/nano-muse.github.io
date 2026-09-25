@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>nanoMuse — a personal AI agent that lives on your phone</title>
-    <meta name="description" content="nanoMuse is an open-source personal AI agent inspired by Meta Muse. It runs entirely on your Android phone with your own model: a shell, a browser, MCP, skills, goals on a schedule, a feed written for you, and a stop before anything you could not undo." />
-    <meta property="og:title" content="nanoMuse — a personal AI agent that lives on your phone" />
-    <meta property="og:description" content="Open source, on-device, your model. Inspired by Meta Muse." />
+    <title>nanoMuse — one agent for every device you own</title>
+    <meta name="description" content="nanoMuse is a fully open-source personal AI agent in the shape of Meta Muse, for every device you own. Today it runs entirely on your Android phone with your own model: a shell, a browser, MCP, skills, goals on a schedule, a feed written for you, and a stop before anything you could not undo. Next: the phone's screen as a hand, then the phone drives your PC." />
+    <meta property="og:title" content="nanoMuse — one agent for every device you own" />
+    <meta property="og:description" content="Fully open source, in the shape of Meta Muse, on hardware you own. Android today." />
     <meta property="og:image" content="https://nano-muse.github.io/assets/social-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -27,6 +27,7 @@
         <span>nanoMuse</span>
       </a>
       <nav class="links" aria-label="Sections">
+        <a href="#why"><i class="en">Why</i><i class="zh">为什么</i></a>
         <a href="#does"><i class="en">What it does</i><i class="zh">能做什么</i></a>
         <a href="#how"><i class="en">How it works</i><i class="zh">怎么工作</i></a>
         <a href="#versions"><i class="en">Versions</i><i class="zh">版本</i></a>
@@ -38,22 +39,25 @@
     <main id="top">
       <section class="hero">
         <p class="eyebrow">
-          <i class="en">Open source · GPL-3.0 · Android</i>
-          <i class="zh">开源 · GPL-3.0 · Android</i>
+          <i class="en">Fully open source · GPL-3.0 · Android today</i>
+          <i class="zh">完全开源 · GPL-3.0 · 今天是 Android</i>
         </p>
         <h1>
-          <i class="en">A personal AI agent<br />that lives on your phone.</i>
-          <i class="zh">一个住在你手机里的<br />个人 AI 智能体。</i>
+          <i class="en">One agent,<br />every device you own.</i>
+          <i class="zh">一个智能体，<br />你的所有设备。</i>
         </h1>
         <p class="lede">
           <i class="en">
-            nanoMuse is an open-source take on Meta's Muse. One agent with a name and a face: it does things
-            instead of answering questions, keeps working while the app is closed, remembers you, and stops to
-            ask before anything you could not undo. Everything runs on the phone, with a model you bring.
+            nanoMuse is a personal AI agent in the shape of Meta's Muse, built as free software. One agent with a
+            name and a face: it does things instead of answering questions, keeps working while the app is closed,
+            remembers you, and stops to ask before anything you could not undo. Today the whole agent runs on your
+            Android phone with a model you bring; next it gets hands for the apps that have no API, then it reaches
+            your computer, and every device after that.
           </i>
           <i class="zh">
-            nanoMuse 是 Meta Muse 的开源实现。一个有名字、有脸的智能体：它做事而不是只回答，App
-            关掉了也继续干活，记得你，遇到无法撤销的操作先停下来问你。一切都在手机上运行，模型由你决定。
+            nanoMuse 是一个 Muse 形状的个人 AI 智能体，以自由软件的方式做出来。一个有名字、有脸的智能体：它做事而不是只回答，App
+            关掉了也继续干活，记得你，遇到无法撤销的操作先停下来问你。今天整个智能体跑在你的 Android 手机上，模型由你带；接下来它会长出一双能碰没有 API
+            的 App 的手，然后伸到你的电脑，再之后是你的每一台设备。
           </i>
         </p>
         <div class="cta">
@@ -73,8 +77,8 @@
       <figure class="moods">
         <img src="assets/moods.webp" alt="The same small dragon in five poses: at rest, working at a laptop with headphones, holding a crystal ball, raising a star, and with a sweat drop" width="1696" height="320" loading="eager" />
         <figcaption>
-          <i class="en">One face, drawn by your own image model, posed for every state — at rest, working, waiting for you, pleased, sorry.</i>
-          <i class="zh">一张脸，由你自己的图像模型画出，为每种状态摆好姿势——休息、工作、等你、开心、抱歉。</i>
+          <i class="en">One face, posed for every state — at rest, working, waiting for you, pleased, sorry. The built-in dragon, or one your own image model draws.</i>
+          <i class="zh">一张脸，为每种状态摆好姿势——休息、工作、等你、开心、抱歉。内置的小龙，或者你自己的图像模型画的。</i>
         </figcaption>
       </figure>
 
@@ -97,14 +101,56 @@
         </figure>
       </section>
 
+      <section class="grid pillars" id="why">
+        <h2><i class="en">Why nanoMuse</i><i class="zh">为什么是 nanoMuse</i></h2>
+        <p class="sub">
+          <i class="en">Four things define the project. Two are in the app today; two are the next versions.</i>
+          <i class="zh">四件事定义这个项目。两件今天已经在 App 里，两件是接下来的版本。</i>
+        </p>
+        <ul>
+          <li>
+            <span class="status now"><i class="en">today</i><i class="zh">今天</i></span>
+            <h3><i class="en">Muse's shape</i><i class="zh">Muse 的形</i></h3>
+            <p>
+              <i class="en">One agent, not a toolbox: a name and a face, a first conversation, a feed written for you, goals worked on in the background, memory you can edit, an approval before anything you could not undo. The product Meta shipped, rebuilt screen by screen.</i>
+              <i class="zh">一个智能体，不是一箱工具：名字和脸、第一次对话、写给你的动态、后台推进的目标、能改的记忆、无法撤销的操作前先审批。Meta 发布的那个产品，一屏一屏重做出来。</i>
+            </p>
+          </li>
+          <li>
+            <span class="status now"><i class="en">today</i><i class="zh">今天</i></span>
+            <h3><i class="en">Fully open</i><i class="zh">完全开源</i></h3>
+            <p>
+              <i class="en">GPL-3.0-or-later, the whole repository. No closed component, no account, no server you have to trust, no model you have to use. Muse, 豆包 and 千问 are products you are given; nanoMuse is one you own.</i>
+              <i class="zh">GPL-3.0-or-later，整个仓库。没有闭源组件，不用注册，没有必须信任的服务器，没有必须用的模型。Muse、豆包、千问是给你用的产品；nanoMuse 是你自己拥有的。</i>
+            </p>
+          </li>
+          <li>
+            <span class="status next"><i class="en">next · 0.1.12</i><i class="zh">下一步 · 0.1.12</i></span>
+            <h3><i class="en">Any app, API or not</i><i class="zh">通用：有没有 API 都能做</i></h3>
+            <p>
+              <i class="en">Most of a day in China runs through apps that never had an API. The agent tries a skill, a CLI, an MCP server or the browser first and, when you allow it, the device's own screen — looking and tapping the way you would — with the same approvals before paying, sending or deleting. Off by default.</i>
+              <i class="zh">国内的一天大多跑在从来没有 API 的 App 里。它先试技能、CLI、MCP 服务或浏览器，你允许时再用设备自己的屏幕——像你一样看和点——付款、发送、删除前的审批一样不少。默认关着。</i>
+            </p>
+          </li>
+          <li>
+            <span class="status later"><i class="en">after · 0.1.13</i><i class="zh">再之后 · 0.1.13</i></span>
+            <h3><i class="en">Every device</i><i class="zh">多端协同</i></h3>
+            <p>
+              <i class="en">One agent, and every device you own is a pair of hands and a front door: say it on the phone, it happens on your PC; say it to your glasses, it happens on both. The phone drives your computer first; a desktop app, iOS, the web on a machine of your own and glasses follow.</i>
+              <i class="zh">一个智能体，你的每台设备都是它的一双手和一个入口：在手机上说，事在电脑上办；对眼镜说，两边一起办。先是手机操作电脑；桌面 App、iOS、你自己机器上的网页版、眼镜跟着来。</i>
+            </p>
+          </li>
+        </ul>
+      </section>
+
       <section class="grid" id="does">
         <h2><i class="en">What it does</i><i class="zh">能做什么</i></h2>
         <ul>
           <li>
             <h3><i class="en">Does things</i><i class="zh">动手做事</i></h3>
             <p>
-              <i class="en">A Linux shell, a browser, MCP servers, skills, and the apps on your phone through their screens when there is no API. It picks the hand the job needs.</i>
-              <i class="zh">Linux shell、浏览器、MCP、技能，以及在没有 API 时通过屏幕操作手机上的 App。它自己挑合适的那只手。</i>
+              <i class="en">A Linux shell, a browser, MCP servers, skills, and — with the accessibility service on — the apps on your phone through their screens, using the accessibility CLI OpenMinis ships. It picks the hand the job needs.</i>
+              <i class="zh">Linux shell、浏览器、MCP、技能，以及——开了无障碍服务后——用 OpenMinis 自带的无障碍 CLI 通过屏幕操作手机上的 App。它自己挑合适的那只手。</i>
             </p>
           </li>
           <li>
@@ -172,6 +218,65 @@
         </div>
       </section>
 
+      <section class="compare" id="compare">
+        <h2><i class="en">Next to Muse and OpenMinis</i><i class="zh">和 Muse、OpenMinis 放在一起看</i></h2>
+        <p class="sub">
+          <i class="en">Muse is the product this follows; <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> is the on-device runtime the app is built on.</i>
+          <i class="zh">Muse 是它跟随的产品；<a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 是 App 所基于的端侧运行时。</i>
+        </p>
+        <div class="table">
+          <table>
+            <thead>
+              <tr><th></th><th>Meta Muse</th><th>OpenMinis</th><th>nanoMuse</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><i class="en">Where the agent runs</i><i class="zh">智能体跑在哪</i></th>
+                <td><i class="en">Meta's cloud VM, one per user</i><i class="zh">Meta 的云端 VM，每人一台</i></td>
+                <td><i class="en">The phone it is installed on</i><i class="zh">装了它的那台手机</i></td>
+                <td><i class="en">The phone today; a computer of yours next; wherever you say, later</i><i class="zh">今天在手机上；下一步在你的电脑上；再之后你说在哪就在哪</i></td>
+              </tr>
+              <tr>
+                <th><i class="en">Shape</i><i class="zh">形状</i></th>
+                <td><i class="en">One agent with a name and a face, a feed, goals, a Sentinel</i><i class="zh">一个有名字、有脸的智能体，动态、目标、Sentinel</i></td>
+                <td><i class="en">Sessions, tools and settings — a workbench</i><i class="zh">会话、工具、设置——一个工作台</i></td>
+                <td><i class="en">Muse's: one agent, a name and a face, a feed, goals on a schedule, memory you can edit</i><i class="zh">Muse 的：一个智能体，名字和脸、动态、按时检查的目标、能改的记忆</i></td>
+              </tr>
+              <tr>
+                <th><i class="en">Before something irreversible</i><i class="zh">无法撤销的操作前</i></th>
+                <td><i class="en">The Sentinel model approves</i><i class="zh">Sentinel 模型审批</i></td>
+                <td><i class="en">Per-tool permissions</i><i class="zh">按工具授权</i></td>
+                <td><i class="en">A stop with scope: once, this chat, always for this recipient, domain or folder; passwords never typed by the agent</i><i class="zh">带范围的停：只此一次、本次对话、对这个收件人 / 域名 / 目录一直允许；密码从不由它输</i></td>
+              </tr>
+              <tr>
+                <th><i class="en">Apps without an API</i><i class="zh">没有 API 的 App</i></th>
+                <td><i class="en">Out of reach — the VM never touches your phone</i><i class="zh">碰不到——VM 碰不到你的手机</i></td>
+                <td><i class="en">An accessibility CLI the model can call, on Android</i><i class="zh">Android 上一个模型可以调用的无障碍 CLI</i></td>
+                <td><i class="en">The screen as a hand: vision plus the accessibility tree, APIs tried first, you take over for logins, the same approvals — 0.1.12</i><i class="zh">屏幕当手：视觉加无障碍树、先试 API、登录由你接管、同一套审批——0.1.12</i></td>
+              </tr>
+              <tr>
+                <th><i class="en">Other devices</i><i class="zh">其他设备</i></th>
+                <td><i class="en">Many clients of one VM; the VM does not touch your devices</i><i class="zh">多个客户端连一台 VM；VM 不碰你的设备</i></td>
+                <td><i class="en">The one it is installed on</i><i class="zh">只有装了它的那一台</i></td>
+                <td><i class="en">One agent across your devices: the phone drives your PC first — 0.1.13 — then every device, both ways</i><i class="zh">一个智能体跨你的设备：先是手机操作电脑——0.1.13——再是所有设备、双向</i></td>
+              </tr>
+              <tr>
+                <th><i class="en">Models</i><i class="zh">模型</i></th>
+                <td><i class="en">Meta's</i><i class="zh">Meta 的</i></td>
+                <td><i class="en">Bring your own</i><i class="zh">自己带</i></td>
+                <td><i class="en">Bring your own — chat, image and video, or one Model Studio key for all three</i><i class="zh">自己带——对话、图像、视频三个模型，或一把百炼 key 全包</i></td>
+              </tr>
+              <tr>
+                <th><i class="en">Licence</i><i class="zh">许可</i></th>
+                <td><i class="en">Closed</i><i class="zh">闭源</i></td>
+                <td>GPL-3.0</td>
+                <td><i class="en">GPL-3.0-or-later, built on OpenMinis</i><i class="zh">GPL-3.0-or-later，基于 OpenMinis</i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section class="versions" id="versions">
         <h2><i class="en">Versions</i><i class="zh">版本</i></h2>
         <ol>
@@ -186,10 +291,12 @@
           <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.9" rel="noopener">0.1.9</a><span class="name">Portrait</span><span class="what"><i class="en">The face, Muse's way: "change your avatar to…" in the chat, four takes, poses, a share card; the agent's page behind the face; five avatar sizes.</i><i class="zh">换脸照 Muse 的路：对话里说「把虚拟形象换成…」，四张候选、姿势、分享卡；点脸进它的资料页；形象大小五档。</i></span></li>
           <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.10" rel="noopener">0.1.10</a><span class="name">Motion</span><span class="what"><i class="en">The three models named — chat, image, video — in Settings and in what the agent knows; with a video model the face gets a looping clip per state; pictures and clips on request.</i><i class="zh">三个模型说清楚——对话、图像、视频——在设置里，也在它自己知道的事里；设了视频模型，每个状态一段循环短片；按需生图生视频。</i></span></li>
           <li class="current"><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.11" rel="noopener">0.1.11</a><span class="name">Hatch</span><span class="what"><i class="en">The built-in dragon, stills and clips in the APK; the first conversation read by the chat model, its own names in your language; one Model Studio key for all three models, or a provider per model.</i><i class="zh">内置小龙，静态图和短片都在 APK 里；第一次对话由对话模型来读，给自己提的名字跟着你的语言；一把百炼 key 跑三个模型，或者每个模型各接一个平台。</i></span></li>
+          <li class="next"><span class="ver">0.1.12</span><span class="name">Hands</span><span class="what"><i class="en">The phone's screen as a hand, as a working demo: look, tap, type and swipe in the apps that have no API; APIs first; a floating capsule with Stop; you take over for logins; the same approvals; off by default.</i><i class="zh">手机屏幕当手，先出能用的 demo：在没有 API 的 App 里看、点、打字、滑动；先试 API；带「停止」的悬浮胶囊；登录由你接管；同一套审批；默认关着。</i></span></li>
+          <li class="next"><span class="ver">0.1.13</span><span class="name">Reach</span><span class="what"><i class="en">The phone drives your computer, as a working demo: pair a PC, and a sentence on the phone runs there — shell, files, browser — with the results and approvals back on the phone. One way, for now.</i><i class="zh">手机操作你的电脑，先出能用的 demo：配对一台电脑，手机上的一句话在那边执行——shell、文件、浏览器——结果和审批回到手机。暂时单向。</i></span></li>
           <li class="next"><span class="ver">0.2.0</span><span class="name">Beta</span><span class="what"><i class="en">Polish from the first weeks of use; the first beta.</i><i class="zh">头几周使用后的打磨；第一个 beta。</i></span></li>
         </ol>
         <p class="more">
-          <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/roadmap.md" rel="noopener"><i class="en">Roadmap: the phone now, the web on a VM of your own next, the desktop after</i><i class="zh">路线图：现在是手机，然后是你自己的云端 VM 上的网页版，再之后是桌面</i> →</a>
+          <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/roadmap.md" rel="noopener"><i class="en">Roadmap: the phone now; then a desktop app, iOS, the web on a machine of your own, glasses</i><i class="zh">路线图：现在是手机；之后是桌面 App、iOS、你自己机器上的网页版、眼镜</i> →</a>
         </p>
       </section>
     </main>
@@ -216,7 +323,7 @@
         function apply(l) {
           root.lang = l === "zh" ? "zh-CN" : "en";
           root.setAttribute("data-lang", l);
-          document.title = l === "zh" ? "nanoMuse — 一个住在你手机里的个人 AI 智能体" : "nanoMuse — a personal AI agent that lives on your phone";
+          document.title = l === "zh" ? "nanoMuse — 一个智能体，你的所有设备" : "nanoMuse — one agent for every device you own";
         }
         apply(lang);
         document.getElementById("lang").addEventListener("click", function () {
