@@ -123,11 +123,6 @@ section h2 { text-align: center; }
 section .sub { max-width: 720px; margin: 14px auto 0; text-align: center; color: var(--fg-2); font-size: 16px; }
 .pillars ul { grid-template-columns: repeat(4, 1fr); }
 .pillars li { position: relative; }
-.pillars .status {
-  display: inline-block; margin-bottom: 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
-  padding: 3px 9px; border-radius: 999px; background: var(--line); color: var(--fg-2);
-}
-.pillars .status.now { background: var(--action); color: var(--action-fg); }
 @media (max-width: 1000px) { .pillars ul { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .pillars ul { grid-template-columns: 1fr; } }
 
