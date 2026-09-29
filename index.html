@@ -30,6 +30,7 @@
         <a href="#why"><i class="en">Why</i><i class="zh">为什么</i></a>
         <a href="#does"><i class="en">What it does</i><i class="zh">能做什么</i></a>
         <a href="#how"><i class="en">How it works</i><i class="zh">怎么工作</i></a>
+        <a href="#news"><i class="en">News</i><i class="zh">动态</i></a>
         <a href="#versions"><i class="en">Versions</i><i class="zh">版本</i></a>
         <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
         <button class="lang" id="lang" type="button" aria-label="Switch language"><i class="en">中文</i><i class="zh">EN</i></button>
@@ -39,8 +40,8 @@
     <main id="top">
       <section class="hero">
         <p class="eyebrow">
-          <i class="en">Fully open source · GPL-3.0 · No server, no account</i>
-          <i class="zh">完全开源 · GPL-3.0 · 没有服务器，不用注册</i>
+          <i class="en">Fully open source · GPL-3.0 · Free and non-profit · Your own key, or a free account</i>
+          <i class="zh">完全开源 · GPL-3.0 · 免费、非盈利 · 用自己的 key，或免费登录</i>
         </p>
         <h1>
           <i class="en">A fully open-source,<br />Muse-style personal agent<br />for every device you own.</i>
@@ -67,9 +68,33 @@
           </a>
         </div>
         <p class="fine">
-          <i class="en">Android 8.0 or newer, arm64 · alpha 0.1.16 · every version is signed with the same key and installs over the last.</i>
-          <i class="zh">Android 8.0 以上，arm64 · alpha 0.1.16 · 每个版本同一把签名，覆盖安装即可升级。</i>
+          <i class="en">Android 8.0 or newer, arm64 · alpha 0.1.18 · every version is signed with the same key and installs over the last.</i>
+          <i class="zh">Android 8.0 以上，arm64 · alpha 0.1.18 · 每个版本同一把签名，覆盖安装即可升级。</i>
         </p>
+      </section>
+
+      <section class="notice" id="free" aria-label="Free, open-source, non-profit">
+        <div class="card">
+          <p class="tag"><i class="en">Free · Open source · Non-profit</i><i class="zh">免费 · 开源 · 非盈利</i></p>
+          <p>
+            <i class="en">
+              nanoMuse is a community project, built to make a better personal agent together, and it will never charge
+              for anything. This version is open for the community to try: sign in with an e-mail address and the agent
+              has free model access — about ¥25 (≈ $3.5) a day per account, across chat, pictures and video — paid for
+              by the developer. Your messages are not stored and nothing about you is sold or shared; delete the account
+              at any time, or bring your own API key and skip the relay altogether.
+            </i>
+            <i class="zh">
+              nanoMuse 是纯开源社区项目，目标是和社区一起做出更好的个人智能体，永远不会收取任何费用。目前这一版向社区开放体验：用邮箱登录，就能免费使用模型——现阶段每个账号每天约
+              ¥25（≈ $3.5），涵盖对话、图片和视频，模型费用由开发者自己承担。你的消息不会被保存，你的任何数据都不会被出售或分享；随时可以删除账号，也可以直接用自己的
+              API key，完全不经过中转。
+            </i>
+          </p>
+          <p class="links">
+            <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/cloud.md" rel="noopener"><i class="en">How the relay works</i><i class="zh">中转是怎么工作的</i></a>
+            <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/privacy.md" rel="noopener"><i class="en">Privacy</i><i class="zh">隐私</i></a>
+          </p>
+        </div>
       </section>
 
       <figure class="moods">
@@ -120,8 +145,8 @@
           <li>
             <h3><i class="en">Fully open</i><i class="zh">完全开源</i></h3>
             <p>
-              <i class="en">GPL-3.0-or-later, the whole repository. No closed component, no account, no server you have to trust, no model you have to use. Muse, 豆包 and 千问 are products you are given; nanoMuse is one you own — and a base to build your own Muse on.</i>
-              <i class="zh">整个仓库 GPL-3.0-or-later。没有闭源组件，不用注册账号，不用信任任何服务器，也不绑定任何模型。Muse、豆包、千问是别人给你用的产品；nanoMuse 是你自己拥有的——可以依赖开源定制属于自己的 Muse。</i>
+              <i class="en">GPL-3.0-or-later, the whole repository. No closed component, no account or server you have to use, no model you have to use — the optional nanoMuse Cloud relay is in the repository too, and anyone can run one. Muse, 豆包 and 千问 are products you are given; nanoMuse is one you own — and a base to build your own Muse on.</i>
+              <i class="zh">整个仓库 GPL-3.0-or-later。没有闭源组件，不强制注册账号，不强制依赖任何服务器，也不绑定任何模型——可选的 nanoMuse 云中转同样在仓库里，谁都可以自己搭。Muse、豆包、千问是别人给你用的产品；nanoMuse 是你自己拥有的——可以依赖开源定制属于自己的 Muse。</i>
             </p>
           </li>
           <li>
@@ -195,8 +220,8 @@
           <div>
             <h3><i class="en">On the phone</i><i class="zh">在手机上</i></h3>
             <p>
-              <i class="en">The app is <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 1.13, modified: a complete on-device agent — Alpine Linux under proot, a shell, a WebView browser, MCP, skills, scheduled tasks, the accessibility service — with the home, the memory, the goals, the feed and the guardrails nanoMuse adds on top. All inside the APK: no server, no account, no cloud VM. Files, memory and the avatar's pictures stay in the app's private storage.</i>
-              <i class="zh">App 是修改过的 <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 1.13：一个完整的端侧智能体——proot 下的 Alpine Linux、shell、WebView 浏览器、MCP、技能、定时任务、无障碍服务——nanoMuse 在上面加了主页、记忆、目标、动态和审批。全在 APK 里：没有服务器，不用注册账号，没有云端虚拟机。文件、记忆和形象的图片都留在 App 自己的私有存储里。</i>
+              <i class="en">The app is <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 1.13, modified: a complete on-device agent — Alpine Linux under proot, a shell, a WebView browser, MCP, skills, scheduled tasks, the accessibility service — with the home, the memory, the goals, the feed and the guardrails nanoMuse adds on top. All inside the APK: no cloud VM, and no server or account unless you choose the free relay. Files, memory and the avatar's pictures stay in the app's private storage.</i>
+              <i class="zh">App 是修改过的 <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 1.13：一个完整的端侧智能体——proot 下的 Alpine Linux、shell、WebView 浏览器、MCP、技能、定时任务、无障碍服务——nanoMuse 在上面加了主页、记忆、目标、动态和审批。全在 APK 里：没有云端虚拟机；除非你选择免费的中转，否则也不需要任何服务器或账号。文件、记忆和形象的图片都留在 App 自己的私有存储里。</i>
             </p>
           </div>
           <div>
@@ -288,6 +313,42 @@
         </div>
       </section>
 
+      <section class="news" id="news">
+        <h2><i class="en">News</i><i class="zh">动态</i></h2>
+        <ol>
+          <li>
+            <time datetime="2026-09-29">2026-09-29</time>
+            <div>
+              <h3><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.18" rel="noopener">0.1.18 · Open</a></h3>
+              <p>
+                <i class="en">Sign-up is open to everyone: an e-mail address, a code, and about ¥25 a day of model use, free (community members: no cap); what each request cost is shown in ¥ and $. A new first run — welcome, the notice above, e-mail sign-in first, the Hands permissions up front and skippable, then the first conversation. Approvals in three tiers: a payment can be remembered for one app with the screen lock, and Settings → Permissions lists what you remembered, by tier. Hands no longer stops at 25 steps.</i>
+                <i class="zh">注册向所有人开放：一个邮箱、一个验证码，每天约 ¥25 的模型用量，免费（社区成员不限量）；每次请求的花费以 ¥ 和 $ 显示。全新的首次启动流程——欢迎页、上面这段说明、邮箱登录优先、一开始就引导开启 Hands 所需权限（可跳过）、然后是第一次对话。授权分三级：付款可以对某一个应用「记住」，需验证锁屏，「设置 → 权限」按等级列出你记住的所有授权。Hands 不再有 25 步的上限。</i>
+              </p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-09-26">2026-09-26</time>
+            <div>
+              <h3><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.16" rel="noopener">0.1.16 · Palette</a></h3>
+              <p>
+                <i class="en">Image and video models picked from what your key can use; drawing on Model Studio through its native endpoint; Wan video models beside MiniMax-H3.</i>
+                <i class="zh">图像与视频模型从你的 key 能用的列表里选；在百炼上通过原生接口画图；MiniMax-H3 之外加入通义万相视频模型。</i>
+              </p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-09-25">2026-09-25</time>
+            <div>
+              <h3><a href="https://github.com/nano-muse/nanoMuse/releases" rel="noopener">0.1.12 – 0.1.15 · Hands, Reach, Stage</a></h3>
+              <p>
+                <i class="en">Hands: the phone's screen as a hand, with a capsule and Stop. Reach: the phone drives your computer. Stage: watching the hands work.</i>
+                <i class="zh">Hands：把手机屏幕当成一只手，全程有胶囊和「停止」。Reach：用手机驱动你的电脑。Stage：看得见的操作过程。</i>
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
       <section class="versions" id="versions">
         <h2><i class="en">Versions</i><i class="zh">版本</i></h2>
         <ol>
@@ -312,7 +373,8 @@
           <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.13" rel="noopener">0.1.13</a><span class="name">Reach</span><span class="what"><i class="en">The phone drives your computer: run one Python file on the PC, pair it by code, and a sentence on the phone runs there — shell, files, browser, a look at the screen — with the results and approvals back on the phone. One way, for now.</i><i class="zh">手机操作你的电脑：在电脑上跑一个 Python 文件、用配对码配对，手机上的一句话就在那边执行——shell、文件、浏览器、看一眼屏幕——结果和审批回到手机。暂时单向。</i></span></li>
           <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.14" rel="noopener">0.1.14</a><span class="name">Home</span><span class="what"><i class="en">A fix: coming back to the app — from a notification, the tool capsule or Hands finishing a run — lands in its own home again, not on the OpenMinis chat screen.</i><i class="zh">修复：从通知、悬浮胶囊或「动手」跑完之后回到 App，落回它自己的主页，而不是 OpenMinis 的聊天页。</i></span></li>
           <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.15" rel="noopener">0.1.15</a><span class="name">Stage</span><span class="what"><i class="en">Watching the hands: a glow along the edges while they work, a turning ring with the action’s name where they are about to tap, a ripple as they land, the ring riding along a swipe — after UI-TARS-desktop’s ScreenMarker. The capsule lets every gesture through and steps aside; the app-icon quick actions open in the home.</i><i class="zh">看得见的动手：干活时四边有呼吸的光，要点的位置先出现带动作名的转动圆环，落指时荡开波纹，滑动时圆环沿路径滑过——参考 UI-TARS-desktop 的 ScreenMarker。胶囊让手势穿过并主动让位；图标快捷方式在主页里打开。</i></span></li>
-          <li class="current"><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.16" rel="noopener">0.1.16</a><span class="name">Palette</span><span class="what"><i class="en">Image and video models picked like the chat model — from what the key can use, the recommended one marked; drawing on Model Studio through its native endpoint (the 404 is gone); Wan video models beside MiniMax-H3.</i><i class="zh">图像、视频模型像对话模型一样从 key 能用的里面选，推荐的有标记；百炼画图改走原生接口（404 没了）；MiniMax-H3 之外可选通义万相视频模型。</i></span></li>
+          <li><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.16" rel="noopener">0.1.16</a><span class="name">Palette</span><span class="what"><i class="en">Image and video models picked like the chat model — from what the key can use, the recommended one marked; drawing on Model Studio through its native endpoint (the 404 is gone); Wan video models beside MiniMax-H3.</i><i class="zh">图像、视频模型像对话模型一样从 key 能用的里面选，推荐的有标记；百炼画图改走原生接口（404 没了）；MiniMax-H3 之外可选通义万相视频模型。</i></span></li>
+          <li class="current"><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.18" rel="noopener">0.1.18</a><span class="name">Open</span><span class="what"><i class="en">Sign-up open to everyone with about ¥25 a day of model use, free; costs in ¥ and $; a new first run with the community notice, e-mail sign-in first and the Hands permissions up front; approvals in three tiers, payments rememberable per app with the screen lock; Hands without a step cap; undeclared modalities no longer read as text-only.</i><i class="zh">注册向所有人开放，每天约 ¥25 的模型用量，免费；花费以 ¥ 和 $ 显示；全新首次启动流程——社区说明、邮箱登录优先、一开始就引导 Hands 权限；授权分三级，付款可按应用记住（需验证锁屏）；Hands 不再限步数；未声明模态的模型不再被当成纯文本。</i></span></li>
           <li class="next"><span class="ver">0.2.0</span><span class="name">Beta</span><span class="what"><i class="en">Polish from the first weeks of use; the first beta.</i><i class="zh">头几周使用后的打磨；第一个 beta。</i></span></li>
         </ol>
         <p class="more">
