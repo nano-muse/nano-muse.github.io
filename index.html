@@ -1,7 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="utf-8" />
+    <script>
+      // the language before first paint, so both never show at once; the script at the end
+      // of the page keeps it in step with the switch
+      (function () {
+        try {
+          var s = localStorage.getItem("nm-lang");
+          var l = s ? (s === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
+          document.documentElement.setAttribute("data-lang", l);
+          document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
+        } catch (e) {}
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>nanoMuse — a fully open-source, Muse-style personal agent for every device you own</title>
     <meta name="description" content="nanoMuse is a fully open-source, Muse-style personal agent for every device you own: your phone, your computer, or the browser with nothing to install. Free model use included, or connect any OpenAI-compatible model. It does things instead of answering questions, keeps working while the app is closed, remembers you, and stops to ask before anything you could not undo." />
