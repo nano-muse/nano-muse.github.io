@@ -67,7 +67,9 @@ html[data-lang="zh"] body { letter-spacing: 0; }
   padding: 5px 12px; cursor: pointer;
 }
 .lang:hover { color: var(--fg); border-color: var(--fg-2); }
-@media (max-width: 640px) { .links a:not([href^="http"]) { display: none; } }
+.links .btn.small { padding: 7px 14px; font-size: 13.5px; border-radius: 999px; }
+.links .btn.small:hover { transform: none; }
+@media (max-width: 760px) { .links a:not([href^="http"]) { display: none; } .links { gap: 16px; } }
 
 /* Hero */
 main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
@@ -85,11 +87,17 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
 .btn:hover { transform: translateY(-1px); border-color: var(--fg-2); }
 .btn.primary { background: var(--action); color: var(--action-fg); border-color: var(--action); }
 .btn.primary:hover { filter: brightness(1.06); }
+.btn .platform { font-weight: 500; color: inherit; opacity: 0.8; }
 .fine { margin: 18px 0 0; font-size: 13px; color: var(--fg-2); }
+.stage { margin: clamp(40px, 6vw, 72px) auto 0; max-width: 1040px; }
+.stage img {
+  width: 100%; border-radius: clamp(12px, 1.6vw, 18px); box-shadow: var(--shadow);
+  border: 1px solid color-mix(in srgb, var(--line) 70%, transparent); background: var(--bg-2);
+}
 .fine code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
 
 /* Moods strip */
-.moods { margin: 40px auto 0; max-width: 980px; text-align: center; }
+.moods { margin: clamp(48px, 7vw, 80px) auto 0; max-width: 980px; text-align: center; }
 .moods img { width: 100%; }
 .moods figcaption { margin-top: 16px; font-size: 15px; color: var(--fg-2); }
 
@@ -111,8 +119,79 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
 /* Sections */
 section h2 { text-align: center; }
 
-/* The notice: one card under the hero, the thing a newcomer must know first. */
-.notice { padding: 48px 0 0; }
+/* What is nanoMuse: a paragraph and a checklist, two columns. */
+.what { padding: clamp(80px, 11vw, 140px) 0 0; }
+.what .sub { max-width: 780px; font-size: 17.5px; line-height: 1.55; }
+.features {
+  list-style: none; margin: 44px auto 0; padding: 0; max-width: 980px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 40px;
+}
+.features li { position: relative; padding: 14px 0 14px 40px; border-bottom: 1px solid var(--line); }
+.features li::before {
+  content: ""; position: absolute; left: 4px; top: 21px; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--action) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="none" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M5 10.5l3.5 3.5L15 6.5"/></svg>') center / 14px no-repeat;
+}
+.features h3 { font-size: 17px; }
+.features p { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: var(--fg-2); }
+@media (max-width: 760px) { .features { grid-template-columns: 1fr; gap: 0; } }
+
+/* Every device: three columns. */
+.devices { padding: clamp(80px, 11vw, 140px) 0 0; }
+.cols.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .cols.three { grid-template-columns: 1fr; } }
+
+/* Download: numbered ways, each with its buttons. */
+.download { padding: clamp(80px, 11vw, 140px) 0 0; }
+.ways { list-style: none; margin: 40px auto 0; padding: 0; max-width: 900px; }
+.ways li {
+  display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;
+  padding: 26px 0; border-top: 1px solid var(--line);
+}
+.ways li:last-child { border-bottom: 1px solid var(--line); }
+.ways .n {
+  display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; margin-top: 2px;
+  font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums;
+  background: var(--bg-2); color: var(--fg-2); border: 1px solid var(--line);
+}
+.ways h3 { font-size: 20px; }
+.ways p { margin: 6px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--fg-2); }
+.ways code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }
+.dl { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.dl .btn { padding: 10px 16px; font-size: 14.5px; }
+.dl .btn.mine { border-color: var(--action); color: var(--action); }
+.install {
+  position: relative; margin: 14px 0 0; padding: 12px 96px 12px 16px; border-radius: 12px;
+  background: var(--bg-2); border: 1px solid var(--line); overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; line-height: 1.5;
+}
+.install code { font-size: inherit; }
+.install .copy {
+  position: absolute; right: 8px; top: 8px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--bg); color: var(--fg-2); font: inherit; font-family: var(--font); font-size: 12.5px; font-weight: 600; cursor: pointer;
+}
+.install .copy:hover { color: var(--fg); border-color: var(--fg-2); }
+.install .copy.done { color: var(--action); border-color: var(--action); }
+@media (max-width: 560px) { .ways li { grid-template-columns: 1fr; gap: 10px; } }
+
+/* FAQ */
+.faq { padding: clamp(80px, 11vw, 140px) 0 0; }
+.qa { max-width: 820px; margin: 36px auto 0; border-top: 1px solid var(--line); }
+.qa details { border-bottom: 1px solid var(--line); }
+.qa summary {
+  list-style: none; cursor: pointer; padding: 18px 40px 18px 4px; position: relative;
+  font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+}
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after {
+  content: "+"; position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  font-size: 22px; font-weight: 400; color: var(--fg-2); line-height: 1;
+}
+.qa details[open] summary::after { content: "–"; }
+.qa p { margin: 0; padding: 0 40px 20px 4px; font-size: 15.5px; line-height: 1.6; color: var(--fg-2); }
+.qa p a { color: var(--action); }
+
+/* The notice: one card, the things a newcomer must know. */
+.notice { padding: clamp(72px, 10vw, 120px) 0 0; }
 .notice .card {
   max-width: 820px; margin: 0 auto; padding: 26px 28px; border-radius: var(--radius);
   background: var(--bg-2); border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
