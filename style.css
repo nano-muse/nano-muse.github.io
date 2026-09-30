@@ -197,6 +197,11 @@ section h2 { text-align: center; }
   background: var(--bg-2); border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
 }
 .notice .tag { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--action); }
+.notice .notice-title { text-align: left; margin: 0 0 12px; font-size: clamp(22px, 3vw, 30px); line-height: 1.15; letter-spacing: -0.02em; }
+.notice p + p { margin-top: 12px; }
+.notice .cta { justify-content: flex-start; margin-top: 18px; }
+.eyebrow a { color: var(--action); }
+.eyebrow a:hover { text-decoration: underline; }
 html[data-lang="zh"] .notice .tag { text-transform: none; letter-spacing: 0.02em; }
 .notice p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--fg); }
 .notice .links { margin-top: 14px; font-size: 14.5px; }
