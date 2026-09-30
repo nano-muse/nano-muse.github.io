@@ -167,6 +167,12 @@
           <i class="en">Version 0.1.22 · every build comes from the tag on GitHub · <a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.22" rel="noopener">checksums and notes</a></i>
           <i class="zh">版本 0.1.22 · 每个构建都来自 GitHub 上对应的 tag · <a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.22" rel="noopener">校验值与说明</a></i>
         </p>
+        <div class="source" role="group" aria-label="Download source">
+          <span><i class="en">Download from</i><i class="zh">下载源</i></span>
+          <button type="button" class="pill" data-source="github">GitHub</button>
+          <button type="button" class="pill" data-source="mirror"><i class="en">nanomuse.cn mirror</i><i class="zh">国内镜像 nanomuse.cn</i></button>
+          <small><i class="en">The mirror copies each release from GitHub within fifteen minutes and checks every file's SHA-256; the files are the same. <a href="https://nanomuse.cn/dl/" rel="noopener">Browse it</a>.</i><i class="zh">镜像在发布后十五分钟内从 GitHub 同步，每个文件都核对过 SHA-256，与发布页完全一致。<a href="https://nanomuse.cn/dl/" rel="noopener">浏览目录</a>。</i></small>
+        </div>
         <ol class="ways">
           <li id="dl-web">
             <span class="n">1</span>
@@ -561,6 +567,35 @@
         else if (os === "ios") btn.href = "#dl-web";
         Array.prototype.forEach.call(document.querySelectorAll(".dl a[data-os]"), function (a) {
           if (a.getAttribute("data-os") === os) a.classList.add("mine");
+        });
+      })();
+      (function () {
+        // Where the packages come from: GitHub, or the mirror at nanomuse.cn/dl/<tag>/<file>
+        // (kept by the site's server, see demo/showcase/mirror in the nanoMuse repository).
+        // Every download link on the page is rewritten in place; the choice is remembered, and
+        // a browser in Chinese starts on the mirror since that is who needs it.
+        var GH = "https://github.com/nano-muse/nanoMuse/releases/download/";
+        var MIRROR = "https://nanomuse.cn/dl/";
+        var links = Array.prototype.slice.call(document.querySelectorAll('a[href^="' + GH + '"]'));
+        var buttons = document.querySelectorAll(".source .pill");
+        if (!links.length || !buttons.length) return;
+        links.forEach(function (a) { a.setAttribute("data-github", a.getAttribute("href")); });
+        function apply(src) {
+          links.forEach(function (a) {
+            var gh = a.getAttribute("data-github");
+            a.href = src === "mirror" ? MIRROR + gh.slice(GH.length) : gh;
+          });
+          Array.prototype.forEach.call(buttons, function (b) { b.classList.toggle("on", b.getAttribute("data-source") === src); });
+          document.documentElement.setAttribute("data-source", src);
+        }
+        var saved = localStorage.getItem("nm-source");
+        apply(saved === "mirror" || saved === "github" ? saved : (/^zh/i.test(navigator.language || "") ? "mirror" : "github"));
+        Array.prototype.forEach.call(buttons, function (b) {
+          b.addEventListener("click", function () {
+            var src = b.getAttribute("data-source");
+            localStorage.setItem("nm-source", src);
+            apply(src);
+          });
         });
       })();
       (function () {
