@@ -71,6 +71,19 @@ html[data-lang="zh"] body { letter-spacing: 0; }
 .links .btn.small:hover { transform: none; }
 @media (max-width: 760px) { .links a:not([href^="http"]) { display: none; } .links { gap: 16px; } }
 
+/* The notice, first: a full-width band under the nav (free · open source · non-profit). */
+.banner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 14px;
+  padding: 10px clamp(20px, 5vw, 56px);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--action) 12%, var(--bg)), color-mix(in srgb, #7c5cff 12%, var(--bg)), color-mix(in srgb, #06b6d4 12%, var(--bg)));
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  font-size: 14px; line-height: 1.4; text-align: center; color: var(--fg);
+}
+.banner strong { color: var(--action); font-weight: 700; letter-spacing: 0.01em; }
+.banner span { color: var(--fg-2); }
+.banner:hover span { color: var(--fg); }
+@media (max-width: 760px) { .banner { font-size: 13px; padding: 9px 16px; } }
+
 /* Hero */
 main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
 .hero { text-align: center; padding: clamp(72px, 12vw, 136px) 0 40px; }
@@ -291,3 +304,29 @@ footer p { max-width: 760px; margin: 22px auto 0; text-align: center; font-size:
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* Doc pages (own-key/): one column of prose under the shared nav */
+.doc { max-width: 760px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 56px) 40px; }
+.doc .crumb { font-size: 14px; color: var(--fg-2); }
+.doc .crumb a { color: var(--action); }
+.doc h1 { margin-top: 10px; font-size: clamp(30px, 4.4vw, 44px); line-height: 1.1; font-weight: 700; letter-spacing: -0.03em; }
+.doc .lead { margin: 16px 0 0; font-size: 18px; line-height: 1.55; color: var(--fg-2); }
+.doc h2 { margin-top: clamp(40px, 5vw, 56px); font-size: 26px; text-align: left; }
+.doc h3 { margin-top: 28px; }
+.doc p, .doc li { font-size: 16.5px; line-height: 1.65; }
+.doc p { margin: 12px 0 0; }
+.doc ul, .doc ol { margin: 12px 0 0; padding-left: 24px; }
+.doc li + li { margin-top: 8px; }
+.doc li ul { margin-top: 6px; }
+.doc code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92em; background: var(--bg-2); border-radius: 6px; padding: 1px 6px; }
+.doc .steps { list-style: none; counter-reset: step; padding: 0; margin-top: 20px; }
+.doc .steps li { counter-increment: step; position: relative; padding: 18px 20px 18px 64px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+.doc .steps li + li { margin-top: 12px; }
+.doc .steps li::before { content: counter(step); position: absolute; left: 18px; top: 16px; width: 30px; height: 30px; border-radius: 50%; background: var(--action); color: var(--action-fg); font-weight: 700; font-size: 15px; display: grid; place-items: center; }
+.doc .steps strong { display: block; font-size: 17px; margin-bottom: 4px; }
+.doc .callout { margin-top: 20px; padding: 14px 18px; border-left: 3px solid var(--action); background: var(--bg-2); border-radius: 0 12px 12px 0; font-size: 15.5px; }
+.doc table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 15.5px; }
+.doc th, .doc td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.doc th { color: var(--fg-2); font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+html[data-lang="zh"] .doc th { text-transform: none; letter-spacing: 0; }
+.doc .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
