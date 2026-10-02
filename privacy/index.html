@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("nm-lang");
+          var l = s ? (s === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
+          document.documentElement.setAttribute("data-lang", l);
+          document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy — nanoMuse</title>
+    <meta name="description" content="What the nanoMuse apps and nanoMuse Cloud do with your data: what stays on your device, what the relay keeps, the Data controls switch, and how to delete it all." />
+    <meta property="og:title" content="Privacy — nanoMuse" />
+    <meta property="og:description" content="What stays on your device, what the relay keeps, and the one switch that is yours." />
+    <meta property="og:image" content="https://nanomuse.cn/assets/social-card.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://nanomuse.cn/privacy/" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>try{var t=localStorage.getItem("nm-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+    <link rel="icon" href="../assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="canonical" href="https://nanomuse.cn/privacy/" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="../" aria-label="nanoMuse">
+        <img src="../assets/mark.svg" alt="" width="28" height="28" />
+        <span>nanoMuse</span>
+      </a>
+      <nav class="links" aria-label="Sections">
+        <a href="../#what"><i class="en">What it is</i><i class="zh">是什么</i></a>
+        <a href="../#download"><i class="en">Download</i><i class="zh">下载</i></a>
+        <a href="../#faq">FAQ</a>
+        <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
+        <a class="btn small primary" href="https://nanomuse.cn/web/"><i class="en">Try in the browser</i><i class="zh">在浏览器里试</i></a>
+        <button class="lang" id="lang" type="button" aria-label="Switch language"><i class="en">中文</i><i class="zh">EN</i></button>
+      </nav>
+    </header>
+
+    <main class="doc">
+      <p class="crumb"><a href="../#open-source"><i class="en">← Free, open source, non-profit</i><i class="zh">← 免费 · 开源 · 非盈利</i></a></p>
+      <h1><i class="en">Privacy</i><i class="zh">隐私政策</i></h1>
+      <p class="lead"><i class="en">This page is what the nanoMuse apps — the phone, the web and desktop apps, the dsh plugin — and nanoMuse Cloud do with your data. It is short because they do little with it. Where it matters, the one thing you decide is a switch: <b>Settings → Data controls</b>. The same text lives in the repository as <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/privacy.md" rel="noopener">docs/privacy.md</a>, with its history.</i><i class="zh">这一页说明 nanoMuse 的各端应用（手机、网页、桌面、dsh 插件）和 nanoMuse Cloud 怎样处理你的数据。它很短，因为它们对数据做的事不多。真正要你决定的只有一个开关：<b>设置 → 数据控制</b>。同样的文字也在仓库里的 <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/privacy.md" rel="noopener">docs/privacy.md</a>，带修改历史。</i></p>
+      <h2><i class="en">Everything stays on your device</i><i class="zh">一切都留在你的设备上</i></h2>
+      <p><i class="en">The agent runs inside the app — on the phone, in a Linux root file system in the app's private storage; on a computer, in the runtime you installed. Conversations, memory, files the agent writes, scheduled tasks, skills and settings are stored there and, where you mount them, in folders you chose. There is no analytics, no crash reporting to us and no telemetry of any kind. The only nanoMuse server is the optional relay described below, and the apps work fully without it.</i><i class="zh">智能体就在应用里运行——手机上是 App 私有存储里的一个 Linux 根文件系统，电脑上是你安装的运行时。对话、记忆、它写的文件、定时任务、技能和设置都存在那里，以及你挂载的文件夹里。没有统计分析，没有发给我们的崩溃报告，没有任何形式的遥测。nanoMuse 唯一的服务器是下面说的可选中继，不用它应用也完整可用。</i></p>
+      <h2><i class="en">What leaves the device</i><i class="zh">什么会离开设备</i></h2>
+      <ul>
+        <li><i class="en"><b>Your model provider.</b> Messages, attached images and tool results are sent to the model endpoint you configured (Alibaba Cloud Bailian, DeepSeek, OpenAI, OpenRouter, your own vLLM or Ollama, …), under that provider's terms, with the API key you entered. The key is stored on your device only.</i><i class="zh"><b>你的模型服务商。</b>消息、附带的图片和工具结果会发到你配置的模型接口（阿里云百炼、DeepSeek、OpenAI、OpenRouter、你自己的 vLLM 或 Ollama……），按该服务商的条款、用你填的 API key。key 只存在你的设备上。</i></li>
+        <li><i class="en"><b>nanoMuse Cloud, if you signed in.</b> <i>Sign in — free</i> on the first screen (or <i>Settings → nanoMuse Cloud</i>) signs you up with a phone number or an e-mail address and a code, and the app then uses our relay as a model provider — free, ¥10 of model use per account (community members: no limit; each new person who signs up with your invite code adds ¥5 to your allowance and ¥5 to theirs), paid by the developer; nanoMuse is a non-profit community project and never charges. The relay forwards your messages to the model (Alibaba Cloud Model Studio). What it keeps about the account: a salted hash of your address, the address itself encrypted so the person running the relay can see whose account it is (the database file alone shows nothing), a masked hint such as <code>s***@example.com</code>, the hash of the key issued to this device, the kind, model and token count of each request, your invite code with the ids of accounts that used it, and — so your devices wear the same one — the agent's name and look (which face; for one drawn in the avatar studio, its five small pictures). What it keeps of the conversations themselves is governed by one switch, described next. It does not receive or keep your location: the apps never send it, and the relay does not record IP addresses. Signing out revokes the key; deleting the account removes all of it. The relay's source is in the repository under <code>cloud/</code>, and <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/cloud.md" rel="noopener">docs/cloud.md</a> says how to run your own. Nothing about the relay applies when you use your own key.</i><i class="zh"><b>nanoMuse Cloud（如果你登录了）。</b>首屏的「登录——免费」（或「设置 → nanoMuse Cloud」）用手机号或邮箱加验证码注册，之后应用把我们的中继当作模型服务商——免费，每个账号 ¥10 的模型用量（社区成员不限；每有一位新用户用你的邀请码注册，你的额度 +¥5，对方也 +¥5），费用由开发者承担；nanoMuse 是非盈利的社区项目，永远不收费。中继把你的消息转发给模型（阿里云百炼）。关于账号它保存：你的手机号/邮箱加盐后的哈希、加密保存的原文（这样运行中继的人能看出是谁的账号；单独拿到数据库文件什么也看不出）、打码后的提示如 <code>s***@example.com</code>、发给这台设备的 key 的哈希、每次请求的类型、模型和 token 数、你的邀请码和用过它的账号 id，以及——为了让你的设备共用同一个——智能体的名字与形象（哪一张脸；形象工坊画的那种，是它的五张小图）。对话本身保存什么，由下一条说的那个开关决定。它不接收也不保存你的位置：应用从不发送，中继也不记录 IP 地址。退出登录会吊销 key；删除账号会删掉以上全部。中继的源码在仓库的 <code>cloud/</code> 下，<a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/cloud.md" rel="noopener">docs/cloud.md</a> 写了怎么自己搭一个。用自己的 key 时，关于中继的这一切都不适用。</i></li>
+        <li><i class="en"><b>Data controls — “Help improve nanoMuse's AI models”.</b> <i>Settings → Data controls</i> on every app holds one switch. While it is on, the relay keeps the text of your chats with the nanoMuse Cloud models to train the community's own open model: what you wrote, what the model answered, and the tool calls it chose, together with the model, the token counts, and the app's platform and language from the request headers. It does not keep the system prompt (your memory, SOUL and instructions), what tools returned, pictures, audio or clips — those are replaced by a marker — and the turns are tied to your account id only; exports for training carry no account id, address or hint. <b>On cloud.nanomuse.cn the switch is on for accounts created from relay 0.9 on; accounts that existed before keep whatever they had chosen.</b> The switch says so right next to it, and a relay you run yourself chooses with <code>IMPROVE_DEFAULT</code>. Turn it off at any time — nothing more is kept from then on —, delete everything kept so far with one tap on the same page, and deleting the account deletes it too. Nothing about the allowance depends on this switch.</i><i class="zh"><b>数据控制——「帮助改进 nanoMuse 的 AI 模型」。</b>每个端的「设置 → 数据控制」里只有一个开关。开启时，中继保存你与 nanoMuse Cloud 模型对话的文字，用来训练社区自己的开源模型：你写的、模型回答的、它选择调用的工具，连同模型、token 数，以及请求头里的应用平台和语言。不保存系统提示（你的记忆、SOUL 和指令）、工具返回的内容、图片、音频和视频——这些只留一个标记——保存的对话只和你的账号 id 关联；用于训练的导出不带账号 id、手机号/邮箱或提示。<b>在 cloud.nanomuse.cn 上，中继 0.9 之后创建的账号这个开关默认开启；之前已有的账号保持原来的选择。</b>开关旁边就写着这一点，自己搭的中继用 <code>IMPROVE_DEFAULT</code> 决定。随时可以关掉——之后不再保存——也可以在同一页上一键删除已保存的全部内容，删除账号同样会删掉它们。免费额度和这个开关无关。</i></li>
+        <li><i class="en"><b>The project site (nanomuse.cn), if you visit it.</b> Its web server keeps an access log for seven days and then deletes it; a script turns it into counts per day — pages viewed, how many visitors, downloads per file, which sites linked here. A visitor is counted once a day through a hash of the address and browser string under a random salt made for that day and discarded after two; no address is stored beyond the week the raw log lives, nothing is shared with anyone, there are no cookies and no third-party analytics. The relay's own operator page shows counts of sign-ins and accounts per day, and the data-controls panel described above, from the same records — nothing more is collected for it.</i><i class="zh"><b>项目网站 nanomuse.cn（如果你访问它）。</b>网站服务器保留七天访问日志，之后删除；一个脚本把它变成按天的计数——页面浏览、访客数、每个文件的下载数、来源站点。访客每天只计一次，用的是地址加浏览器标识在当天随机盐下的哈希，盐两天后丢弃；原始日志那一周之外不保存任何地址，不与任何人共享，没有 cookie，没有第三方统计。中继自己的管理页显示每天的登录数和账号数，以及上面说的数据控制面板，都来自同一批记录——不会为它多收集任何东西。</i></li>
+        <li><i class="en"><b>The web, when the agent uses it.</b> Web search, page fetches, the in-app browser, MCP servers and command-line tools reach the sites and services they are for. What the agent sends is what you asked it to do.</i><i class="zh"><b>智能体使用网络时。</b>网页搜索、抓取页面、应用内浏览器、MCP 服务器和命令行工具会访问它们各自对应的网站和服务。智能体发出去的，就是你让它做的事。</i></li>
+        <li><i class="en"><b>Update check.</b> <i>Settings → About</i> (on the phone, <i>Check for updates</i>; the desktop app's tray; a <code>pipx</code>/Docker runtime once every six hours, <code>server.update_check = false</code> to stop it) asks the GitHub API for the latest release of <code>nano-muse/nanoMuse</code>. Nothing is sent besides the request itself, and nothing is downloaded on its own.</i><i class="zh"><b>检查更新。</b>「设置 → 关于」（手机上的「检查更新」；桌面版的托盘；<code>pipx</code>/Docker 运行时每六小时一次，<code>server.update_check = false</code> 可关闭）向 GitHub API 询问 <code>nano-muse/nanoMuse</code> 的最新版本。除了这个请求本身什么也不发送，也不会自行下载任何东西。</i></li>
+        <li><i class="en"><b>Backups.</b> If you back up to a remote destination (SMB, WebDAV, SFTP, S3, FTP), the backup goes there, encrypted with the password you chose.</i><i class="zh"><b>备份。</b>如果你备份到远程位置（SMB、WebDAV、SFTP、S3、FTP），备份会发到那里，用你选的密码加密。</i></li>
+      </ul>
+      <h2><i class="en">Permissions</i><i class="zh">权限</i></h2>
+      <p><i class="en">Each permission is asked for when a feature needs it and is used for that feature only: notifications for the agent's status and reminders; accessibility for operating other apps' screens, which is off until you turn it on; storage folders you mount; the microphone for voice input; contacts, calendar and location for the tools of the same names, each callable only after you granted them. Nothing is read in the background.</i><i class="zh">每项权限都在功能需要时才申请，也只用于那个功能：通知用于智能体的状态和提醒；无障碍用于操作其他应用的屏幕，你打开之前一直是关的；存储用于你挂载的文件夹；麦克风用于语音输入；通讯录、日历和位置分别用于同名的工具，各自只在你授权后才能调用。后台不读取任何东西。</i></p>
+      <h2><i class="en">What the agent may do without asking</i><i class="zh">智能体什么事可以不问就做</i></h2>
+      <p><i class="en">Before anything it cannot take back — deleting your files, sending a message or data out, paying — the agent stops and a card asks you, in the shell, in the browser and on the phone's screen alike. What you may remember from that card comes in three tiers, and <i>Settings → Permissions → Remembered approvals</i> lists everything you remembered, one line each, tap to revoke:</i><i class="zh">凡是收不回来的事——删你的文件、把消息或数据发出去、付款——智能体都会停下来，在命令行、浏览器和手机屏幕上一样弹出一张卡片问你。卡片上可以记住的选择分三档，「设置 → 权限 → 已记住的批准」列出你记住的每一条，点一下即可撤销：</i></p>
+      <ul>
+        <li><i class="en"><b>Runs, then tells you</b> — installing software. Never asks; the agent says so afterwards.</i><i class="zh"><b>先做，再告诉你</b>——安装软件。从不询问，做完之后说一声。</i></li>
+        <li><i class="en"><b>Asks first; you may remember it</b> — deleting and sending. <i>Allow for this chat</i> or <i>Always allow for X</i> (one folder, one recipient, one site or app).</i><i class="zh"><b>先问，你可以记住</b>——删除和发送。「本次对话允许」或「对 X 始终允许」（一个文件夹、一个收件人、一个网站或应用）。</i></li>
+        <li><i class="en"><b>Highest: asks at the moment of paying, every time</b> — buying, ordering, booking, trading, transferring. There is no “for this chat”. <i>Remember and run next time in X</i> exists, for one app or site only, and asks for your screen lock (fingerprint, face, PIN) before it takes; every payment that runs on it is said out loud in the chat.</i><i class="zh"><b>最高一档：付款那一刻每次都问</b>——购买、下单、预订、交易、转账。没有「本次对话允许」。「记住，下次在 X 里直接执行」只针对一个应用或网站，执行前要先过屏幕锁（指纹、人脸、PIN）；靠它执行的每一笔付款都会在聊天里明说。</i></li>
+      </ul>
+      <p><i class="en">Passwords, verification codes and card numbers are never typed by the agent; those screens are handed to you. Anything alarming in a command (wiping a disk, force-pushing history, a download piped into a shell) is asked about every time and cannot be remembered. Nothing unlawful or harmful is done, however it is worded — the agent refuses and says why.</i><i class="zh">密码、验证码和卡号永远不由智能体输入，那些界面会交还给你。命令里任何危险的内容（抹盘、强推历史、下载直接管道进 shell）每次都会询问，不能被记住。无论怎么措辞，违法或有害的事都不会做——智能体会拒绝并说明原因。</i></p>
+      <h2><i class="en">Feedback</i><i class="zh">反馈</i></h2>
+      <p><i class="en">Bug reports go to GitHub Issues from <i>Settings → Feedback</i>; the report is pre-filled with the app version and the device model and nothing else. Do not paste API keys or private conversations into an issue.</i><i class="zh">问题反馈从「设置 → 反馈」进入 GitHub Issues；报告会预填应用版本和设备型号，别的没有。不要把 API key 或私人对话贴进 issue。</i></p>
+      <h2><i class="en">Changes</i><i class="zh">变更</i></h2>
+      <p><i class="en">This page changes when the apps' behaviour changes; the history is in the repository.</i><i class="zh">应用的行为变了，这一页也会跟着变；修改历史在仓库里。</i></p>
+      <div class="cta">
+        <a class="btn primary" href="https://nanomuse.cn/web/"><i class="en">Open nanoMuse in the browser</i><i class="zh">打开网页版</i></a>
+        <a class="btn" href="https://github.com/nano-muse/nanoMuse/blob/main/docs/privacy.md" rel="noopener"><i class="en">This page as Markdown</i><i class="zh">本页的 Markdown 版</i></a>
+      </div>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer">
+        <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
+        <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/cloud.md" rel="noopener"><i class="en">nanoMuse Cloud</i><i class="zh">nanoMuse Cloud 说明</i></a>
+        <a href="./"><i class="en">Privacy</i><i class="zh">隐私</i></a>
+        <button type="button" id="theme" aria-label="Theme"><i class="en">Dark</i><i class="zh">深色</i></button>
+      </nav>
+      <p>
+        <i class="en">nanoMuse is an independent community project, not affiliated with or endorsed by Meta Platforms, Inc.; Muse is a trademark of Meta Platforms, Inc. The phone app is based on OpenMinis 1.13 (GPL-3.0), modified since 2026-09-24. Nothing is sold under this name.</i>
+        <i class="zh">nanoMuse 是独立的社区项目，与 Meta Platforms, Inc. 无关，也未获其背书；Muse 是 Meta Platforms, Inc. 的商标。手机 App 基于 OpenMinis 1.13（GPL-3.0），自 2026-09-24 起修改。不会以这个名字出售任何东西。</i>
+      </p>
+    </footer>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var saved = localStorage.getItem("nm-lang");
+        var lang = saved ? (saved === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
+        function apply(l) {
+          root.lang = l === "zh" ? "zh-CN" : "en";
+          root.setAttribute("data-lang", l);
+          document.title = l === "zh" ? "隐私政策 — nanoMuse" : "Privacy — nanoMuse";
+        }
+        apply(lang);
+        document.getElementById("lang").addEventListener("click", function () {
+          lang = lang === "zh" ? "en" : "zh";
+          localStorage.setItem("nm-lang", lang);
+          apply(lang);
+        });
+      })();
+      (function () {
+        var b = document.getElementById("theme");
+        if (!b) return;
+        function paint() {
+          var dark = document.documentElement.getAttribute("data-theme") === "dark";
+          b.innerHTML = dark ? '<i class="en">Light</i><i class="zh">浅色</i>' : '<i class="en">Dark</i><i class="zh">深色</i>';
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute("content", dark ? "#000000" : "#ffffff");
+        }
+        b.addEventListener("click", function () {
+          var dark = document.documentElement.getAttribute("data-theme") === "dark";
+          if (dark) document.documentElement.removeAttribute("data-theme");
+          else document.documentElement.setAttribute("data-theme", "dark");
+          try { localStorage.setItem("nm-theme", dark ? "light" : "dark"); } catch (e) {}
+          paint();
+        });
+        paint();
+      })();
+    </script>
+  </body>
+</html>
