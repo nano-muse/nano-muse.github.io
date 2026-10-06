@@ -1,0 +1,1 @@
+import{_ as t,o,c as s,a2 as a}from"./chunks/framework.Boholvbs.js";const u=JSON.parse('{"title":"iOS","description":"","frontmatter":{},"headers":[],"relativePath":"ios.md","filePath":"ios.md"}'),n={name:"ios.md"};function i(d,e,r,h,c,l){return o(),s("div",null,[...e[0]||(e[0]=[a("",41)])])}const m=t(n,[["render",i]]);export{u as __pageData,m as default};
