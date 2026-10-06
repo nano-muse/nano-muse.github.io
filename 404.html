@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      // Language and theme before first paint: the saved choice, else the browser's.
+      // Language before first paint: the saved choice, else the browser's; the theme is light unless dark was chosen here.
       (function () {
         try {
           var d = document.documentElement;
@@ -11,17 +11,15 @@
           var l = s ? (s === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
           d.setAttribute("data-lang", l);
           d.lang = l === "zh" ? "zh-CN" : "en";
-          var t = localStorage.getItem("nm-theme");
-          if (t !== "dark" && t !== "light") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          d.setAttribute("data-theme", t);
+          // Light unless this visitor chose dark: the page is not darkened by the system's setting.
+          d.setAttribute("data-theme", localStorage.getItem("nm-theme") === "dark" ? "dark" : "light");
         } catch (e) {}
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title data-en="Not found — nanoMuse" data-zh="没有这一页 — nanoMuse">Not found — nanoMuse</title>
     <meta name="robots" content="noindex" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/style.css" />
   </head>

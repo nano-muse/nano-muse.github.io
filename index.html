@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      // Language and theme before first paint: the saved choice, else the browser's. Without
-      // this script both languages stay visible, one under the other, and the system decides
-      // the theme.
+      // Language and theme before first paint: the language is the saved choice, else the
+      // browser's; the theme is light unless dark was chosen here. Without this script both
+      // languages stay visible, one under the other, and the page is light.
       (function () {
         try {
           var d = document.documentElement;
@@ -13,9 +13,8 @@
           var l = s ? (s === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
           d.setAttribute("data-lang", l);
           d.lang = l === "zh" ? "zh-CN" : "en";
-          var t = localStorage.getItem("nm-theme");
-          if (t !== "dark" && t !== "light") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          d.setAttribute("data-theme", t);
+          // Light unless this visitor chose dark: the page is not darkened by the system's setting.
+          d.setAttribute("data-theme", localStorage.getItem("nm-theme") === "dark" ? "dark" : "light");
         } catch (e) {}
       })();
     </script>
@@ -30,8 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nanomuse.cn/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://nanomuse.cn/" />
@@ -102,8 +100,8 @@
           <i class="zh">它是谁、它知道你的什么、它什么时候醒来，都是你能读也能改的 Markdown 文件。</i>
         </p>
         <p class="open-source" id="open-source">
-          <i class="en">The phone app, the desktop app, the web console and the relay that joins them are one repository under GPL-3.0-or-later, non-profit. Sign in to the community relay and you get a free allowance of model use and your devices in sync; with a key of your own the runtime needs no account at all, and the same relay runs on a server of yours.</i>
-          <i class="zh">手机应用、桌面应用、网页控制台和把它们连起来的中继在同一个仓库里，GPL-3.0-or-later，非盈利。登录社区中继，有一份免费的模型额度，设备之间互相同步；用自己的 key，运行时完全不需要账号；同一个中继也可以跑在你自己的服务器上。</i>
+          <i class="en"><b>Free, open source, non-profit — let's build it together.</b> The phone app, the desktop app, the web console and the relay that joins them are one repository under GPL-3.0-or-later. Sign in to the community relay and you get a free allowance of model use and your devices in sync; with a key of your own the runtime needs no account at all, and the same relay runs on a server of yours.</i>
+          <i class="zh"><b>免费、开源、非盈利——一起把它做好。</b>手机应用、桌面应用、网页控制台和把它们连起来的中继在同一个仓库里，GPL-3.0-or-later。登录社区中继，有一份免费的模型额度，设备之间互相同步；用自己的 key，运行时完全不需要账号；同一个中继也可以跑在你自己的服务器上。</i>
         </p>
       </section>
 
@@ -166,6 +164,8 @@
 
       <section id="news">
         <h2><i class="en">News</i><i class="zh">动态</i></h2>
+        <!-- The last three releases, newest first; a release adds its line at the top and drops the
+             fourth (the same three lines as the News section of the README). -->
         <ul class="rows">
           <li>
             <span class="k"><time datetime="2026-10-06">2026-10-06</time></span>

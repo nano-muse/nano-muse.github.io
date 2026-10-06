@@ -14,9 +14,8 @@
     return root.getAttribute("data-lang") === "zh" ? "zh" : "en";
   }
   function dark() {
-    var t = root.getAttribute("data-theme");
-    if (t) return t === "dark";
-    return !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    // light unless this visitor chose dark; the inline script has set the attribute already
+    return root.getAttribute("data-theme") === "dark";
   }
   function tell(msg) {
     // the showcase in the frame follows the site's language and theme (demo/showcase/README.md)
@@ -30,6 +29,19 @@
   }
 
   // ---- language -------------------------------------------------------------------------
+  // The docs site has an English tree at /docs/ and a Chinese one at /docs/zh/ with the same
+  // page names; every link into it on this site follows the chosen language. GitHub links
+  // to the Markdown sources are left alone.
+  var docLinks = Array.prototype.filter.call(document.querySelectorAll('a[href*="docs/"]'), function (a) {
+    var h = a.getAttribute("href") || "";
+    return !/^https?:/i.test(h) || h.indexOf("nanomuse.cn/docs/") >= 0;
+  });
+  function applyDocs(l) {
+    docLinks.forEach(function (a) {
+      var h = a.getAttribute("href");
+      a.setAttribute("href", h.replace(/docs\/(zh\/)?/, l === "zh" ? "docs/zh/" : "docs/"));
+    });
+  }
   function applyLang(l) {
     root.setAttribute("data-lang", l);
     root.lang = l === "zh" ? "zh-CN" : "en";
@@ -37,6 +49,7 @@
       var t = title.getAttribute(l === "zh" ? "data-zh" : "data-en");
       if (t) document.title = t;
     }
+    applyDocs(l);
     tell({ type: "nanomuse:lang", lang: l });
   }
   applyLang(lang());
@@ -55,10 +68,13 @@
 
   // ---- theme ----------------------------------------------------------------------------
   var themeBtn = document.getElementById("theme");
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta && dark()) themeMeta.setAttribute("content", "#121212");
   if (themeBtn) {
     themeBtn.addEventListener("click", function () {
       var t = dark() ? "light" : "dark";
       root.setAttribute("data-theme", t);
+      if (themeMeta) themeMeta.setAttribute("content", t === "dark" ? "#121212" : "#ffffff");
       try {
         localStorage.setItem("nm-theme", t);
       } catch (e) {

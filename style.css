@@ -16,7 +16,9 @@
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   color-scheme: light;
 }
-/* The inline script sets data-theme before first paint; without it the system decides. */
+/* The inline script sets data-theme before first paint: light unless the visitor chose dark
+   on this site. The system's colour scheme is not consulted, so a page without JavaScript is
+   light as well. */
 html[data-theme="dark"] {
   --bg: #121212;
   --bg-2: #1c1c1c;
@@ -26,18 +28,6 @@ html[data-theme="dark"] {
   --link: #58a6ff;
   --code-bg: #1f1f1f;
   color-scheme: dark;
-}
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) {
-    --bg: #121212;
-    --bg-2: #1c1c1c;
-    --fg: #e8e8e8;
-    --muted: #9c9c9c;
-    --line: #2c2c2c;
-    --link: #58a6ff;
-    --code-bg: #1f1f1f;
-    color-scheme: dark;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -99,10 +89,7 @@ html:not([data-lang]) #lang, html:not([data-lang]) #theme { display: none; }
 .switch svg { width: 15px; height: 15px; }
 #theme .sun, html[data-theme="dark"] #theme .moon { display: none; }
 html[data-theme="dark"] #theme .sun { display: block; }
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) #theme .moon { display: none; }
-  html:not([data-theme]) #theme .sun { display: block; }
-}
+.switch:focus-visible, .bar nav a:focus-visible, .brand:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 @media (max-width: 640px) {
   .bar { gap: 12px; padding: 0 14px; }
   .bar nav { gap: 12px; }
