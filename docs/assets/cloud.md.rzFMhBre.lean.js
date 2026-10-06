@@ -1,0 +1,1 @@
+import{_ as a,o as t,c as o,a2 as s}from"./chunks/framework.Boholvbs.js";const u=JSON.parse('{"title":"nanoMuse Cloud","description":"","frontmatter":{},"headers":[],"relativePath":"cloud.md","filePath":"cloud.md"}'),n={name:"cloud.md"};function d(i,e,r,c,h,l){return t(),o("div",null,[...e[0]||(e[0]=[s("",49)])])}const m=a(n,[["render",d]]);export{u as __pageData,m as default};
