@@ -1,1 +1,0 @@
-import{_ as t,o,c as s,a2 as a}from"./chunks/framework.Boholvbs.js";const u=JSON.parse('{"title":"The Android app","description":"","frontmatter":{},"headers":[],"relativePath":"android.md","filePath":"android.md"}'),n={name:"android.md"};function d(r,e,i,h,c,l){return o(),s("div",null,[...e[0]||(e[0]=[a("",21)])])}const m=t(n,[["render",d]]);export{u as __pageData,m as default};
