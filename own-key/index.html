@@ -1,45 +1,56 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <script>
+      // Language and theme before first paint: the saved choice, else the browser's.
       (function () {
         try {
+          var d = document.documentElement;
           var s = localStorage.getItem("nm-lang");
           var l = s ? (s === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
-          document.documentElement.setAttribute("data-lang", l);
-          document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
+          d.setAttribute("data-lang", l);
+          d.lang = l === "zh" ? "zh-CN" : "en";
+          var t = localStorage.getItem("nm-theme");
+          if (t !== "dark" && t !== "light") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          d.setAttribute("data-theme", t);
         } catch (e) {}
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bring your own key — nanoMuse</title>
+    <title data-en="Bring your own key — nanoMuse" data-zh="换成自己的 key — nanoMuse">Bring your own key — nanoMuse</title>
     <meta name="description" content="When the free allowance of nanoMuse Cloud is used up: an Alibaba Cloud Bailian key in mainland China, an OpenRouter key everywhere else, or any OpenAI-compatible provider. Your sign-in and devices are unaffected." />
     <meta property="og:title" content="Bring your own key — nanoMuse" />
     <meta property="og:description" content="Alibaba Cloud Bailian in five steps, or any OpenAI-compatible provider." />
     <meta property="og:image" content="https://nanomuse.cn/assets/social-card.png" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://nanomuse.cn/own-key/" />
-    <meta name="theme-color" content="#ffffff" />
-    <script>try{var t=localStorage.getItem("nm-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="../assets/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://nanomuse.cn/own-key/" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <header class="nav">
+    <header class="bar">
       <a class="brand" href="../" aria-label="nanoMuse">
-        <img src="../assets/mark.svg" alt="" width="28" height="28" />
+        <img src="../assets/mark.svg" alt="" width="24" height="24" />
         <span>nanoMuse</span>
       </a>
-      <nav class="links" aria-label="Sections">
-        <a href="../#what"><i class="en">What it is</i><i class="zh">是什么</i></a>
+      <nav aria-label="Site">
+        <a href="../docs/"><i class="en">Docs</i><i class="zh">文档</i></a>
         <a href="../#download"><i class="en">Download</i><i class="zh">下载</i></a>
-        <a href="../#links"><i class="en">Links</i><i class="zh">链接</i></a>
-        <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
-        <a class="btn small primary" href="https://nanomuse.cn/web/"><i class="en">Try in the browser</i><i class="zh">在线体验</i></a>
-        <button class="lang" id="lang" type="button" aria-label="Switch language"><i class="en">中文</i><i class="zh">EN</i></button>
+        <a class="stars" id="stars" href="https://github.com/nano-muse/nanoMuse" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L12 16.9l-5.3 2.8 1.1-5.9-4.3-4.1 5.9-.8z" /></svg>
+          <span>GitHub</span>
+          <span class="n"></span>
+        </a>
+        <button class="switch" id="lang" type="button" aria-label="Switch language"><i class="en">中文</i><i class="zh">EN</i></button>
+        <button class="switch" id="theme" type="button" aria-label="Switch between light and dark">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" /></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+        </button>
       </nav>
     </header>
 
@@ -160,7 +171,6 @@
         <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
         <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/cloud.md" rel="noopener"><i class="en">nanoMuse Cloud</i><i class="zh">nanoMuse Cloud 说明</i></a>
         <a href="../privacy/"><i class="en">Privacy</i><i class="zh">隐私</i></a>
-        <button type="button" id="theme" aria-label="Theme"><i class="en">Dark</i><i class="zh">深色</i></button>
       </nav>
       <p>
         <i class="en">nanoMuse is an independent community project, not affiliated with or endorsed by Meta Platforms, Inc.; Muse is a trademark of Meta Platforms, Inc. The phone app is based on OpenMinis 1.13 (GPL-3.0), modified since 2026-09-24. Nothing is sold under this name.</i>
@@ -168,41 +178,6 @@
       </p>
     </footer>
 
-    <script>
-      (function () {
-        var root = document.documentElement;
-        var saved = localStorage.getItem("nm-lang");
-        var lang = saved ? (saved === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
-        function apply(l) {
-          root.lang = l === "zh" ? "zh-CN" : "en";
-          root.setAttribute("data-lang", l);
-          document.title = l === "zh" ? "换成自己的 key — nanoMuse" : "Bring your own key — nanoMuse";
-        }
-        apply(lang);
-        document.getElementById("lang").addEventListener("click", function () {
-          lang = lang === "zh" ? "en" : "zh";
-          localStorage.setItem("nm-lang", lang);
-          apply(lang);
-        });
-      })();
-      (function () {
-        var b = document.getElementById("theme");
-        if (!b) return;
-        function paint() {
-          var dark = document.documentElement.getAttribute("data-theme") === "dark";
-          b.innerHTML = dark ? '<i class="en">Light</i><i class="zh">浅色</i>' : '<i class="en">Dark</i><i class="zh">深色</i>';
-          var m = document.querySelector('meta[name="theme-color"]');
-          if (m) m.setAttribute("content", dark ? "#000000" : "#ffffff");
-        }
-        b.addEventListener("click", function () {
-          var dark = document.documentElement.getAttribute("data-theme") === "dark";
-          if (dark) document.documentElement.removeAttribute("data-theme");
-          else document.documentElement.setAttribute("data-theme", "dark");
-          try { localStorage.setItem("nm-theme", dark ? "light" : "dark"); } catch (e) {}
-          paint();
-        });
-        paint();
-      })();
-    </script>
+    <script src="../site.js"></script>
   </body>
 </html>
