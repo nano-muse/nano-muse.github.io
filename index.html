@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <script>
-      // the language before first paint, so both never show at once; the script at the end
-      // of the page keeps it in step with the switch
+      // Pick the language before first paint (saved choice, else the browser's). Without
+      // this script both languages stay visible, one under the other.
       (function () {
         try {
           var s = localStorage.getItem("nm-lang");
@@ -16,17 +16,17 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>nanoMuse — an open-source personal agent for every device you own</title>
-    <meta name="description" content="nanoMuse is an open-source personal agent for every device you own: your phone, your computer, or the browser with nothing to install. Free model use included, or connect any OpenAI-compatible model. It does things instead of answering questions, keeps working while the app is closed, remembers you, and stops to ask before anything you could not undo." />
+    <meta name="description" content="nanoMuse is an open-source personal agent for your phone and your computer. Free, GPL-3.0-or-later, non-profit. Downloads for Android, Windows, macOS and Linux; iPhone and iPad through TestFlight." />
     <meta property="og:title" content="nanoMuse — an open-source personal agent for every device you own" />
-    <meta property="og:description" content="On your phone, your computer, or in the browser. Free model use included, or any model of yours. Fully open source." />
+    <meta property="og:description" content="A personal agent for your phone and your computer. Free, open source, non-profit." />
     <meta property="og:image" content="https://nanomuse.cn/assets/social-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nanomuse.cn/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#ffffff" />
-    <script>try{var t=localStorage.getItem("nm-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://nanomuse.cn/" />
@@ -34,415 +34,128 @@
   </head>
   <body>
     <header class="nav">
-      <a class="brand" href="#top" aria-label="nanoMuse">
+      <a class="brand" href="./" aria-label="nanoMuse">
         <img src="assets/mark.svg" alt="" width="28" height="28" />
         <span>nanoMuse</span>
       </a>
-      <nav class="links" aria-label="Sections">
-        <a href="#what"><i class="en">What it is</i><i class="zh">是什么</i></a>
-        <a href="#devices"><i class="en">Every device</i><i class="zh">多端协同</i></a>
-        <a href="#download"><i class="en">Download</i><i class="zh">下载</i></a>
-        <a href="https://nanomuse.cn/docs/"><i class="en">Docs</i><i class="zh">文档</i></a>
-        <a href="#faq">FAQ</a>
-        <a href="#news"><i class="en">News</i><i class="zh">动态</i></a>
-        <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
-        <a class="btn small primary" href="https://nanomuse.cn/web/"><i class="en">Try in the browser</i><i class="zh">在线体验</i></a>
-        <button class="lang" id="lang" type="button" aria-label="Switch language"><i class="en">中文</i><i class="zh">EN</i></button>
-      </nav>
+      <button class="lang" id="lang" type="button" aria-label="Switch language"><i class="en">中文</i><i class="zh">English</i></button>
     </header>
 
-    <a class="banner" href="#open-source">
-      <strong><i class="en">Free · Open source · Non-profit</i><i class="zh">免费 · 开源 · 非盈利</i></strong>
-      <span><i class="en">A personal agent that belongs to the person running it. Every account comes with a free allowance of model use; who pays for it, what is kept, and how to help →</i><i class="zh">一个属于使用者本人的个人智能体。每个账号都有一份免费模型额度；钱谁出、留什么、怎么参与 →</i></span>
-    </a>
-
     <main id="top">
-      <section class="hero">
+      <section class="intro" id="what">
         <h1>
-          <i class="en">An open-source personal agent<br />for every device you own.</i>
-          <i class="zh">开源的个人智能体，<br />面向你的每一台设备。</i>
+          <i class="en">An open-source personal agent for every device you own.</i>
+          <i class="zh">开源的个人智能体，面向你的每一台设备。</i>
         </h1>
-        <p class="lede">
-          <i class="en">
-            Free model use included, or connect any OpenAI-compatible model. On your phone and on your computer — and a
-            demo in the browser, nothing to install — one agent that does things, keeps working while you are away,
-            remembers you, and stops to ask before anything you could not undo.
-          </i>
-          <i class="zh">
-            自带免费的模型额度，也可以接任何 OpenAI 兼容的模型。在手机上、在电脑上——也可以什么都不装，先在网页上体验一个演示——同一个智能体：动手做事，你不在时也继续干，记得你，遇到无法撤销的操作会先停下来问你。
-          </i>
+        <p>
+          <i class="en">nanoMuse is a phone app (Android; iPhone and iPad through TestFlight), a desktop app (Windows, macOS, Linux) and a demo in the browser. It does things rather than answering questions: it can use the screen, and it stops to ask before anything you could not undo.</i>
+          <i class="zh">nanoMuse 是一个手机应用（Android；iPhone 和 iPad 走 TestFlight），一个桌面应用（Windows、macOS、Linux），也能在浏览器里体验。它做事，而不只是回答：能看屏幕、动手操作，碰到无法撤销的事会先停下来问你。</i>
         </p>
-        <div class="cta">
-          <a class="btn primary" href="https://nanomuse.cn/web/">
-            <i class="en">Try it in the browser</i><i class="zh">在线体验</i>
-          </a>
-          <a class="btn" id="dl" href="#download" data-platform="">
-            <i class="en">Download</i><i class="zh">下载</i><span class="platform" data-platform-name></span>
-          </a>
-        </div>
-        <p class="fine">
-          <i class="en">The browser is a demo on a simulated phone; the real thing is 0.1.39 for Android, Windows, macOS and Linux — iPhone and iPad through TestFlight, internal testers for now.</i>
-          <i class="zh">浏览器里是一台模拟手机上的演示；完整版是 0.1.39，有 Android、Windows、macOS、Linux——iPhone 和 iPad 走 TestFlight，目前仅内部测试员。</i>
+        <p>
+          <i class="en">The relay, nanoMuse Cloud, signs you in and lets your devices talk to each other. The text of your conversations goes through it so every device shows the same chats; one switch turns that off. The same relay runs on a server of yours.</i>
+          <i class="zh">中继 nanoMuse Cloud 负责登录，并让你的几台设备互相通话。对话文字经它同步，每台设备看到同样的聊天；一个开关就能关掉。同一个中继也可以跑在你自己的服务器上。</i>
         </p>
-        <figure class="stage">
-          <img class="en" src="assets/desktop.webp" alt="nanoMuse on the desktop: the agent's chats and devices in a sidebar, a conversation with the steps it took as cards" width="1600" height="1112" loading="eager" />
-          <img class="zh" src="assets/desktop-zh.webp" alt="桌面上的 nanoMuse：左侧是对话和设备，中间是一次对话和它做的每一步" width="1600" height="1112" loading="eager" />
-        </figure>
+        <p>
+          <i class="en">Every account starts with a free allowance of model use, paid by the developer. When it is gone, your own key at one of eighteen providers or a ChatGPT plan you already pay for keeps it going.</i>
+          <i class="zh">每个账号都有一份起始的免费模型额度，钱是开发者出的。用完后，换成你在十八家服务商之一的 key，或者用你已经在付费的 ChatGPT 套餐继续。</i>
+        </p>
+        <p id="open-source">
+          <i class="en">Free, open source, GPL-3.0-or-later, non-profit. Nothing is sold under this name.</i>
+          <i class="zh">免费、开源、GPL-3.0-or-later、非盈利。不会以这个名字出售任何东西。</i>
+        </p>
       </section>
 
-      <section class="what" id="what">
-        <h2><i class="en">What is nanoMuse?</i><i class="zh">nanoMuse 是什么？</i></h2>
-        <p class="sub">
-          <i class="en">nanoMuse is an open-source personal agent in the style of Meta's Muse — one agent with a name and a look of its own, not a toolbox — that runs on the devices you already own and works them for you.</i>
-          <i class="zh">nanoMuse 是一个开源的、Muse 风格的个人智能体——一个有名字、有自己形象的智能体，而不是一堆工具——跑在你已经有的设备上，替你操作它们。</i>
+      <section id="download">
+        <h2><i class="en">Download</i><i class="zh">下载</i></h2>
+        <p class="meta">
+          <i class="en">Version 0.1.39 “Keys”, 2026-10-06 · <a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.39" rel="noopener">release notes and checksums</a></i>
+          <i class="zh">版本 0.1.39「Keys」，2026-10-06 · <a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.39" rel="noopener">发布说明与校验值</a></i>
         </p>
-        <ul class="features">
+        <ul class="rows">
           <li>
-            <h3><i class="en">Every device</i><i class="zh">每一台设备</i></h3>
-            <p><i class="en">Phone, computer and browser are one agent: say it on the phone, it happens on your PC; both ways, with the approvals wherever you are.</i><i class="zh">手机、电脑、浏览器是同一个智能体：在手机上说一句，事情在电脑上办好；双向都行，审批跟着你走。</i></p>
+            <span class="k"><i class="en">Android 8.0+, arm64</i><i class="zh">Android 8.0 以上，arm64</i></span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-0.1.39-arm64.apk">APK</a></span>
           </li>
           <li>
-            <h3><i class="en">Does things</i><i class="zh">动手做事</i></h3>
-            <p><i class="en">A shell, a browser, MCP servers, skills — and the screen itself as a hand for the apps that never had an API.</i><i class="zh">shell、浏览器、MCP 服务、技能——对那些没有 API 的 App，直接把屏幕当手。</i></p>
+            <span class="k">iPhone, iPad</span>
+            <span class="v"><a href="https://nanomuse.cn/docs/ios"><i class="en">TestFlight, internal testers for now</i><i class="zh">TestFlight，目前仅内部测试员</i></a></span>
           </li>
           <li>
-            <h3><i class="en">Asks first</i><i class="zh">关键处先问</i></h3>
-            <p><i class="en">A stop before deleting, sending or paying, remembered with a scope: once, this chat, or always for this recipient, domain or folder.</i><i class="zh">删除、发送、付款前先停下来问你，并记住范围：只此一次、本次对话，或对这个收件人 / 域名 / 目录一直允许。</i></p>
+            <span class="k">Windows 10+</span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-win-x64.exe">x64 · .exe</a></span>
           </li>
           <li>
-            <h3><i class="en">Hands over, and waits</i><i class="zh">交给你，然后等</i></h3>
-            <p><i class="en">A login, a code, a payment, a CAPTCHA: the agent hands the page to you and waits for your Done — on the phone's capsule, the desktop's stage, the browser viewer — then goes on from where you left it.</i><i class="zh">登录、验证码、付款、人机验证：智能体把页面交给你，等你点「完成」——手机的胶囊、桌面的舞台、浏览器视图里都行——然后从你留下的地方接着做。</i></p>
+            <span class="k">macOS 12+</span>
+            <span class="v">
+              Apple Silicon · <a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-mac-arm64.dmg">.dmg</a> · <a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-mac-arm64.zip">.zip</a><br />
+              Intel · <a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-mac-x64.dmg">.dmg</a> · <a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-mac-x64.zip">.zip</a>
+            </span>
           </li>
           <li>
-            <h3><i class="en">In your chat apps</i><i class="zh">在你的聊天软件里</i></h3>
-            <p><i class="en">Your nanoMuse answers in 飞书, 钉钉, 企业微信 and Telegram over the vendors' long connections — no public address, a pairing code for strangers, approvals with a tap.</i><i class="zh">你的 nanoMuse 能在飞书、钉钉、企业微信和 Telegram 里回复，走厂商的长连接——不需要公网地址，陌生人要配对码，审批点一下就行。</i></p>
+            <span class="k">Linux x64</span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-linux-x64.AppImage">AppImage</a> · <a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-linux-x64.deb">.deb</a> · <a href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-linux-x64.tar.gz">.tar.gz</a></span>
           </li>
           <li>
-            <h3><i class="en">Your coding agents</i><i class="zh">你的 coding agent</i></h3>
-            <p><i class="en">The Cursor, Codex and Claude Code sessions on your computer, seen and steered from your phone or the browser — nothing installed into them, nothing through anyone's server.</i><i class="zh">电脑上 Cursor、Codex、Claude Code 的会话，在手机或浏览器上看、指挥——不往它们里面装东西，也不经过任何人的服务器。</i></p>
+            <span class="k"><i class="en">Browser</i><i class="zh">浏览器</i></span>
+            <span class="v"><a href="https://nanomuse.cn/web/">nanomuse.cn/web</a> — <i class="en">a demo on a simulated phone, after a sign-in</i><i class="zh">一台模拟手机上的演示，登录后体验</i></span>
           </li>
           <li>
-            <h3><i class="en">Keeps going</i><i class="zh">一直在干</i></h3>
-            <p><i class="en">Goals checked on a schedule, routines that run while the app is closed, a feed written for you every morning.</i><i class="zh">目标按时检查，例程在 App 关着时照样跑，每天早上写给你的动态。</i></p>
+            <span class="k">Docker</span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/pkgs/container/nanomuse"><code>ghcr.io/nano-muse/nanomuse:0.1.39</code></a> — <i class="en">the runtime for the web app on a computer of yours; a relay of your own: <a href="https://nanomuse.cn/docs/self-hosting">self-hosting</a></i><i class="zh">在你自己的电脑上跑网页版的运行时；自己的中继见<a href="https://nanomuse.cn/docs/self-hosting">自部署</a></i></span>
           </li>
           <li>
-            <h3><i class="en">Remembers you</i><i class="zh">记得你</i></h3>
-            <p><i class="en">Who it is, what it knows about you, what it remembers and when it wakes: four Markdown files you can read and edit.</i><i class="zh">它是谁、了解你什么、记住了什么、什么时候醒来——四个 Markdown 文件，你都能看、能改。</i></p>
+            <span class="k"><i class="en">Every version</i><i class="zh">全部版本</i></span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/releases" rel="noopener">github.com/nano-muse/nanoMuse/releases</a></span>
           </li>
-          <li>
-            <h3><i class="en">Fully open</i><i class="zh">完全开源</i></h3>
-            <p><i class="en">GPL-3.0-or-later, the whole repository — the app, the desktop, the runtime, even the Cloud relay. Run it all yourself, with no account at all.</i><i class="zh">整个仓库 GPL-3.0-or-later——App、桌面版、运行时，连云中继都在里面。全部可以自己搭，一个账号都不用。</i></p>
-          </li>
+        </ul>
+        <p class="note">
+          <i class="en">Every Android build is signed with the same key and installs over the last. The desktop installers are not notarised: on macOS right-click → Open the first time, on Windows click Run anyway. If a download from GitHub fails where you are, the same files are at <a href="https://nanomuse.cn/dl/v0.1.39/">nanomuse.cn/dl/v0.1.39/</a>.</i>
+          <i class="zh">Android 每个版本同一把签名，覆盖安装即可。桌面安装包未经公证：macOS 第一次右键 → 打开，Windows 点「仍要运行」。GitHub 下不动的话，同样的文件在 <a href="https://nanomuse.cn/dl/v0.1.39/">nanomuse.cn/dl/v0.1.39/</a>。</i>
+        </p>
+      </section>
+
+      <section id="links">
+        <h2><i class="en">Links</i><i class="zh">链接</i></h2>
+        <ul class="rows">
+          <li><span class="k"><a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a></span><span class="v"><i class="en">the source, issues and pull requests</i><i class="zh">源码、问题反馈和 PR</i></span></li>
+          <li><span class="k"><a href="https://nanomuse.cn/docs/"><i class="en">Documentation</i><i class="zh">文档</i></a></span><span class="v"><i class="en">how each piece works, for people and for contributors</i><i class="zh">每一部分是怎么工作的，给使用者，也给贡献者</i></span></li>
+          <li><span class="k"><a href="https://github.com/nano-muse/nanoMuse/releases" rel="noopener"><i class="en">Releases</i><i class="zh">发布</i></a></span><span class="v"><i class="en">every version with its notes and checksums</i><i class="zh">每个版本，附说明和校验值</i></span></li>
+          <li><span class="k"><a href="https://discord.gg/bkTySmm28X" rel="noopener">Discord</a></span><span class="v"><i class="en">the community: questions, ideas, what broke</i><i class="zh">社区：提问、想法、哪里坏了</i></span></li>
+          <li><span class="k"><a href="privacy/"><i class="en">Privacy</i><i class="zh">隐私</i></a></span><span class="v"><i class="en">what the relay keeps, for how long, and how to delete it</i><i class="zh">中继保存什么、保存多久、怎么删除</i></span></li>
+          <li><span class="k"><a href="own-key/"><i class="en">Own key</i><i class="zh">自己的 key</i></a></span><span class="v"><i class="en">when the free allowance is gone: a key of yours, step by step</i><i class="zh">免费额度用完后：换成自己的 key，一步一步</i></span></li>
         </ul>
       </section>
 
-      <section class="devices" id="devices">
-        <h2><i class="en">One agent, every device</i><i class="zh">一个智能体，每一台设备</i></h2>
-        <p class="sub">
-          <i class="en">Each device does its own local work and can work the others. They meet through your account on nanoMuse Cloud — or a relay you run yourself.</i>
-          <i class="zh">每台设备都能做本地的事，也能去操作别的设备。靠你在 nanoMuse Cloud 上的账号，它们就能找到彼此——或者用你自己搭的中继。</i>
-        </p>
-        <div class="cols three">
-          <div>
-            <h3><i class="en">Phone</i><i class="zh">手机</i></h3>
-            <p><i class="en">The whole agent inside the APK: Alpine Linux, a shell, a browser, MCP, skills, goals on a schedule. With Hands on, it works your apps through the screen — screenshots only — and pauses for you at logins, payments and deletions.</i><i class="zh">整个智能体都在 APK 里：Alpine Linux、shell、浏览器、MCP、技能、按时检查的目标。打开 Hands 后，它通过屏幕操作你的 App——只看截图——登录、付款、删除时停下来等你。</i></p>
-          </div>
-          <div>
-            <h3><i class="en">Computer</i><i class="zh">电脑</i></h3>
-            <p><i class="en">A desktop app laid out like the Muse desktop, with the same runtime underneath: your files, your terminal, your browser, your screen as a hand — and a Stop that is always one shortcut away. A sentence on the phone runs here; a sentence here can reach the phone.</i><i class="zh">按 Muse 桌面版布局的桌面 App，底下是同一个运行时：你的文件、终端、浏览器，屏幕当手——「停止」永远只隔一个快捷键。手机上的一句话在这里执行；这里的一句话也能去手机上办。</i></p>
-          </div>
-          <div>
-            <h3><i class="en">Browser</i><i class="zh">浏览器</i></h3>
-            <p><i class="en">Nothing to install: sign in at <a href="https://nanomuse.cn/web/">nanomuse.cn/web</a> for a demo on a simulated phone, on the hub with your other devices.</i><i class="zh">什么都不用装：在 <a href="https://nanomuse.cn/web/">nanomuse.cn/web</a> 登录，一台模拟手机上的演示，和你的其他设备在同一个 hub 上。</i></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="download" id="download">
-        <h2><i class="en">Download</i><i class="zh">下载</i></h2>
-        <p class="sub">
-          <i class="en">Version 0.1.39 · every build comes from the tag on GitHub · <a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.39" rel="noopener">checksums and notes</a></i>
-          <i class="zh">版本 0.1.39 · 每个构建都来自 GitHub 上对应的 tag · <a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.39" rel="noopener">校验值与说明</a></i>
-        </p>
-        <div class="source" role="group" aria-label="Download source">
-          <span><i class="en">Download from</i><i class="zh">下载源</i></span>
-          <button type="button" class="pill" data-source="github">GitHub</button>
-          <button type="button" class="pill" data-source="mirror"><i class="en">nanomuse.cn mirror</i><i class="zh">备用镜像 nanomuse.cn</i></button>
-          <small><i class="en">GitHub is the fastest source, from China too in our measurements. If a download fails where you are, the mirror has the same files — copied within fifteen minutes of a release, every SHA-256 checked. <a href="https://nanomuse.cn/dl/" rel="noopener">Browse it</a>.</i><i class="zh">实测从国内直接下 GitHub 也是最快的。万一下不动，备用镜像里是同样的文件——发布后十五分钟内同步，每个都核对过 SHA-256。<a href="https://nanomuse.cn/dl/" rel="noopener">浏览目录</a>。</i></small>
-        </div>
-        <ol class="ways">
-          <li id="dl-web">
-            <span class="n">1</span>
-            <div>
-              <h3><i class="en">Try it in the browser</i><i class="zh">先在线体验</i></h3>
-              <p><i class="en">A demo in a minute — a phone number or an e-mail is enough. For every day, the phone app below is the whole thing.</i><i class="zh">一分钟就能试——手机号或邮箱即可。天天用的话，下面的手机 App 才是完整的它。</i></p>
-              <div class="dl">
-                <a class="btn primary" href="https://nanomuse.cn/web/"><i class="en">Try nanomuse.cn/web</i><i class="zh">试试 nanomuse.cn/web</i></a>
-              </div>
-            </div>
-          </li>
-          <li id="dl-phone">
-            <span class="n">2</span>
-            <div>
-              <h3><i class="en">Phone</i><i class="zh">手机</i></h3>
-              <p><i class="en">Android 8.0 or newer, arm64. Every version is signed with the same key and installs over the last. iPhone and iPad: TestFlight, internal testers for now.</i><i class="zh">Android 8.0 以上，arm64。每个版本同一把签名，覆盖安装即可升级。iPhone 和 iPad：TestFlight，目前仅内部测试员。</i></p>
-              <div class="dl">
-                <a class="btn" data-os="android" href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-0.1.39-arm64.apk">Android · APK</a>
-              </div>
-            </div>
-          </li>
-          <li id="dl-desktop">
-            <span class="n">3</span>
-            <div>
-              <h3><i class="en">Desktop app</i><i class="zh">桌面 App</i></h3>
-              <p><i class="en">nanoMuse Desktop, built on <a href="https://github.com/deepseek-ai/deepseek-harness" rel="noopener">DeepSeek Harness</a>, with the runtime for the hands inside. Not notarised: on macOS right-click → Open the first time; on Windows click Run anyway.</i><i class="zh">nanoMuse Desktop，建在 <a href="https://github.com/deepseek-ai/deepseek-harness" rel="noopener">DeepSeek Harness</a> 上，「手」要用的运行时打包在里面。未经公证：macOS 第一次右键 → 打开；Windows 点「仍要运行」。</i></p>
-              <div class="dl">
-                <a class="btn" data-os="mac" href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-mac-arm64.dmg">macOS · Apple Silicon</a>
-                <a class="btn" data-os="mac" href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-mac-x64.dmg">macOS · Intel</a>
-                <a class="btn" data-os="windows" href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-win-x64.exe">Windows · x64</a>
-                <a class="btn" data-os="linux" href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-linux-x64.AppImage">Linux · AppImage</a>
-                <a class="btn" data-os="linux" href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-linux-x64.deb">Linux · .deb</a>
-                <a class="btn" data-os="linux" href="https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-linux-x64.tar.gz">Linux · tar.gz</a>
-              </div>
-            </div>
-          </li>
-        </ol>
-      </section>
-
-      <section class="shots" aria-label="Screens">
-        <figure>
-          <img class="en" src="assets/chat-approval.webp" alt="Chat: before deleting in the workspace, the agent stops and asks" width="640" height="1422" loading="lazy" />
-          <img class="zh" src="assets/chat-approval-zh.webp" alt="对话：删工作区里的东西之前，停下来问你" width="640" height="1422" loading="lazy" />
-          <figcaption><i class="en">It asks first</i><i class="zh">关键处先问你</i></figcaption>
-        </figure>
-        <figure>
-          <img class="en" src="assets/feed.webp" alt="Feed: three posts written for you this morning" width="640" height="1422" loading="lazy" />
-          <img class="zh" src="assets/feed-zh.webp" alt="动态：今天早上写给你的三条" width="640" height="1422" loading="lazy" />
-          <figcaption><i class="en">A feed written for you</i><i class="zh">写给你的动态</i></figcaption>
-        </figure>
-        <figure>
-          <img class="en" src="assets/goals.webp" alt="Goals: a tracked goal and two routines" width="640" height="1422" loading="lazy" />
-          <img class="zh" src="assets/goals-zh.webp" alt="目标：一个追踪中的目标和一条例程" width="640" height="1422" loading="lazy" />
-          <figcaption><i class="en">Goals, on a schedule</i><i class="zh">目标，按时检查</i></figcaption>
-        </figure>
-        <figure>
-          <img class="en" src="assets/avatar.webp" alt="Avatar: describe a look, your image model draws it, pick the one you like" width="640" height="1422" loading="lazy" />
-          <img class="zh" src="assets/avatar-zh.webp" alt="形象：描述一句，你的图像模型来画，你挑一张喜欢的" width="640" height="1422" loading="lazy" />
-          <figcaption><i class="en">A look you choose</i><i class="zh">你挑的形象</i></figcaption>
-        </figure>
-      </section>
-
-      <figure class="moods">
-        <img src="assets/moods.webp" alt="The same small dragon in five poses: at rest, working at a laptop with headphones, holding a crystal ball, raising a star, and with a sweat drop" width="1696" height="320" loading="lazy" />
-        <figcaption>
-          <i class="en">One look, posed for every state — at rest, working, waiting for you, pleased, sorry. The built-in dragon, or one your own image model draws.</i>
-          <i class="zh">一个形象，为每种状态摆好姿势——休息、工作、等你、开心、抱歉。内置的小龙，或者你自己的图像模型画的。</i>
-        </figcaption>
-      </figure>
-
-      <section class="notice" id="open-source" aria-label="Free, open source, non-profit">
-        <div class="card">
-          <p class="tag"><i class="en">Free · Open source · Non-profit</i><i class="zh">免费 · 开源 · 非盈利</i></p>
-          <h2 class="notice-title"><i class="en">Free, open source, non-profit</i><i class="zh">免费、开源、非盈利</i></h2>
-          <p>
-            <i class="en">
-              <strong>nanoMuse is open source and free.</strong> Sign in with a phone number or an e-mail and you get a
-              starting allowance of model use; the developer pays for it. The account page shows what is left and how to
-              add more. When it is gone, use your own key — <a href="own-key/">Alibaba Cloud Bailian in mainland China,
-              OpenRouter elsewhere</a> (Bailian only signs up accounts from mainland China). With an account, the text of your conversations is kept on nanoMuse Cloud so that your devices show the same
-              chats — one switch in Data controls turns it off and deletes it; nothing is sold; delete the account whenever you want.
-            </i>
-            <i class="zh">
-              <strong>nanoMuse 开源、免费。</strong>手机号或邮箱登录后有一份起始额度，钱是开发者出的；剩多少、怎么加，账号页里有数。用完可以填自己的
-              key——<a href="own-key/">国内用阿里云百炼，海外用 OpenRouter</a>（百炼只接受中国大陆注册）。登录后，对话文字会保存在 nanoMuse Cloud，让你的几台设备看到同样的对话——「数据控制」里一个开关就能关掉并删除；数据不卖；账号想删就删。
-            </i>
-          </p>
-          <p>
-            <i class="en">
-              0.1 is a preview we use every day and know the rough edges of. Tell us where it broke and what you wish it
-              did; bring an idea and build it here — a skill, a connector, a device, a translation. A star helps others
-              find it.
-            </i>
-            <i class="zh">
-              0.1 是我们每天在用、也知道哪里还糙的预览版。哪里坏了、想要什么，直接告诉我们；有想法就在这里做出来——技能、连接器、设备、翻译。觉得有用，点个 Star。
-            </i>
-          </p>
-          <p class="cta">
-            <a class="btn primary" href="https://github.com/nano-muse/nanoMuse" rel="noopener"><i class="en">Star on GitHub</i><i class="zh">去 GitHub 点 Star</i></a>
-            <a class="btn" href="https://github.com/nano-muse/nanoMuse/issues/new/choose" rel="noopener"><i class="en">Report a bug or ask for a feature</i><i class="zh">反馈问题 / 提需求</i></a>
-            <a class="btn" href="https://github.com/nano-muse/nanoMuse/blob/main/CONTRIBUTING.md" rel="noopener"><i class="en">Contribute code</i><i class="zh">贡献代码</i></a>
-          </p>
-          <p class="links">
-            <a href="https://nanomuse.cn/docs/cloud"><i class="en">How the relay works</i><i class="zh">中继是怎么工作的</i></a>
-            <a href="own-key/"><i class="en">Bring your own key</i><i class="zh">换自己的 key</i></a>
-            <a href="privacy/"><i class="en">Privacy</i><i class="zh">隐私</i></a>
-            <a href="https://nanomuse.cn/docs/every-device"><i class="en">How the devices work together</i><i class="zh">多端是怎么协同的</i></a>
-          </p>
-        </div>
-      </section>
-
-      <section class="compare" id="compare">
-        <h2><i class="en">Compared with Muse and OpenMinis</i><i class="zh">和 Muse、OpenMinis 的对比</i></h2>
-        <p class="sub">
-          <i class="en">Muse is the product it takes its style from; <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> is the on-device runtime the phone app is built on.</i>
-          <i class="zh">Muse 是它的风格参照；<a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 是手机 App 所基于的端侧运行时。</i>
-        </p>
-        <div class="table">
-          <table>
-            <thead>
-              <tr><th></th><th>Meta Muse</th><th>OpenMinis</th><th>nanoMuse</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th><i class="en">Where the agent runs</i><i class="zh">智能体跑在哪</i></th>
-                <td><i class="en">Meta's cloud VM, one per user</i><i class="zh">Meta 的云端 VM，每人一台</i></td>
-                <td><i class="en">The phone it is installed on</i><i class="zh">装了它的那台手机</i></td>
-                <td><i class="en">Your phone, your computer, or the browser — one agent across them</i><i class="zh">你的手机、你的电脑，或者浏览器——同一个智能体</i></td>
-              </tr>
-              <tr>
-                <th><i class="en">Before something irreversible</i><i class="zh">无法撤销的操作前</i></th>
-                <td><i class="en">The Sentinel model approves</i><i class="zh">Sentinel 模型审批</i></td>
-                <td><i class="en">Per-tool permissions</i><i class="zh">按工具授权</i></td>
-                <td><i class="en">A stop with scope: once, this chat, always for this recipient, domain or folder; passwords never typed by the agent</i><i class="zh">停下来问你，并记住范围：只此一次、本次对话，或对这个收件人 / 域名 / 目录一直允许；密码从不由它输入</i></td>
-              </tr>
-              <tr>
-                <th><i class="en">Apps without an API</i><i class="zh">没有 API 的 App</i></th>
-                <td><i class="en">Out of reach — the VM never touches your phone</i><i class="zh">碰不到——云端 VM 够不着你的手机</i></td>
-                <td><i class="en">An accessibility CLI the model can call, on Android</i><i class="zh">Android 上有一个模型可以调用的无障碍 CLI</i></td>
-                <td><i class="en">The screen as a hand, on the phone and on the computer: screenshots only, APIs tried first, you take over for logins, the same approvals</i><i class="zh">把屏幕当手，手机和电脑都行：只看截图，先试 API，登录由你接管，同一套审批</i></td>
-              </tr>
-              <tr>
-                <th><i class="en">Other devices</i><i class="zh">其他设备</i></th>
-                <td><i class="en">Many clients of one VM; the VM does not touch your devices</i><i class="zh">多个客户端连同一台 VM；VM 不碰你的设备</i></td>
-                <td><i class="en">The one it is installed on</i><i class="zh">只有装了它的那一台</i></td>
-                <td><i class="en">Phone, computer and browser on one hub, each able to ask the others; approvals wherever you are</i><i class="zh">手机、电脑、浏览器在同一个 hub 上，彼此都能拜托对方；审批跟着你走</i></td>
-              </tr>
-              <tr>
-                <th><i class="en">Models</i><i class="zh">模型</i></th>
-                <td><i class="en">Meta's</i><i class="zh">Meta 的</i></td>
-                <td><i class="en">Bring your own</i><i class="zh">自己带</i></td>
-                <td><i class="en">Free use through the project's relay, or your own — chat, image and video, or one Model Studio key for all three</i><i class="zh">通过项目的中继免费用，或者自己带——对话、图像、视频三个模型，或一把百炼 key 全包</i></td>
-              </tr>
-              <tr>
-                <th><i class="en">Licence</i><i class="zh">许可</i></th>
-                <td><i class="en">Closed</i><i class="zh">闭源</i></td>
-                <td>GPL-3.0</td>
-                <td><i class="en">GPL-3.0-or-later, built on OpenMinis</i><i class="zh">GPL-3.0-or-later，基于 OpenMinis</i></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="faq" id="faq">
-        <h2>FAQ</h2>
-        <div class="qa">
-          <details>
-            <summary><i class="en">Do I need my own API key?</i><i class="zh">需要自己的 API key 吗？</i></summary>
-            <p><i class="en">Not to start: a signed-in account has ¥10 of model use, free, plus ¥5 per friend you invite. After that, your own key — <a href="own-key/">Bailian in mainland China, OpenRouter elsewhere</a> — or any OpenAI-compatible endpoint.</i><i class="zh">一开始不需要：登录后的账号有 ¥10 的免费模型额度，每邀请一位朋友再加 ¥5。之后换自己的 key——<a href="own-key/">国内百炼、海外 OpenRouter</a>——或者接任何 OpenAI 兼容接口。</i></p>
-          </details>
-          <details>
-            <summary><i class="en">How much does it cost?</i><i class="zh">要花多少钱？</i></summary>
-            <p><i class="en">Nothing. nanoMuse is a non-profit community project and will never sell anything under its name. The free model allowance is paid for by the developer; community members who help build it have no cap. Past the allowance you pay only your own model provider, at its prices.</i><i class="zh">不花钱。nanoMuse 是非盈利的社区项目，永远不会以它的名义出售任何东西。免费模型额度由开发者承担；参与共建的社区成员不限量。额度用完后，钱只付给你自己的模型服务商，按它的价格算。</i></p>
-          </details>
-          <details>
-            <summary><i class="en">Which devices does it run on?</i><i class="zh">能在哪些设备上用？</i></summary>
-            <p><i class="en">Android 8.0 or newer (arm64) as an app; Windows 10+, macOS 12+ and Linux x64 as a desktop app; and any browser through the web version. The iPhone and iPad app is on TestFlight for internal testers; until it is public the web version works on an iPhone too.</i><i class="zh">Android 8.0 以上（arm64）有 App；Windows 10 以上、macOS 12 以上、Linux x64 有桌面 App；任何浏览器都能用网页版。iPhone 和 iPad 的 App 在 TestFlight 内部测试；公开之前，iPhone 上也可以用网页版。</i></p>
-          </details>
-          <details>
-            <summary><i class="en">How do the devices work together?</i><i class="zh">多台设备是怎么协同的？</i></summary>
-            <p><i class="en">Every device signs in to the same account and shows up on a hub. A sentence on the phone can run on the computer (its shell, its files, its browser, its screen) and the other way round; results and approvals come back to the device you are holding. A “Stop” on any device stops the hands everywhere. You can run the relay yourself instead of using ours — it is in the repository.</i><i class="zh">每台设备登录同一个账号，出现在同一个 hub 上。手机上的一句话可以在电脑上执行（它的 shell、文件、浏览器、屏幕），反过来也一样；结果和审批回到你手里的那台设备。任何一台上的「停止」会停下所有设备上的操作。中继也可以自己搭，不用我们的——它就在仓库里。</i></p>
-          </details>
-          <details>
-            <summary><i class="en">Is it safe to let it use my screen?</i><i class="zh">让它操作屏幕安全吗？</i></summary>
-            <p><i class="en">Hands is off by default. When on, the agent looks only at screenshots — never the accessibility tree — and tries a skill, a CLI, an MCP server or the browser first. Before paying, sending or deleting it stops and asks, and it never types passwords or codes: you take over for those. A floating capsule with Stop is on screen the whole time.</i><i class="zh">Hands 默认是关着的。打开后，它只看截图——不读无障碍树——并且先试技能、CLI、MCP 服务或浏览器。付款、发送、删除前会停下来问你，密码和验证码它从不输入，由你接管。整个过程屏幕上都有带「停止」的悬浮胶囊。</i></p>
-          </details>
-          <details>
-            <summary><i class="en">What about my data and privacy?</i><i class="zh">我的数据和隐私呢？</i></summary>
-            <p><i class="en">On your own devices everything stays in the app's private storage. The relay forwards model calls and keeps a ledger of what they cost; whether it also keeps the text of your chats with the Cloud models, to train the community's own open model, is one switch — <i>Settings → Data controls</i> — and the <a href="privacy/">privacy policy</a> says exactly what that covers, how new accounts start and how to delete it. The web version keeps your data in a container only you can reach, stopped when idle, never read by us. Delete your account at any time.</i><i class="zh">在你自己的设备上，所有东西都留在 App 的私有存储里。中继转发模型调用、记一笔花费；它是否还保存你与 Cloud 模型对话的文字（用来训练社区自己的开源模型），由一个开关决定——「设置 → 数据控制」——<a href="privacy/">隐私政策</a>写清了它具体包括什么、新账号怎么开始、怎么删除。网页版的数据留在一个只有你能访问的容器里，闲置时休眠，我们不会去读。账号随时可以删除。</i></p>
-          </details>
-          <details>
-            <summary><i class="en">Is nanoMuse open source? Is it Meta's?</i><i class="zh">nanoMuse 开源吗？是 Meta 的吗？</i></summary>
-            <p><i class="en">All of it is open source under GPL-3.0-or-later: the phone app (built on OpenMinis 1.13, every edit marked), the desktop app, the runtime, the web version's gateway and the Cloud relay. It is an independent community project, not affiliated with or endorsed by Meta Platforms, Inc.; Muse is their trademark, and “Muse-style” names the shape we admire.</i><i class="zh">全部开源，GPL-3.0-or-later：手机 App（基于 OpenMinis 1.13，每处修改都有标记）、桌面 App、运行时、网页版的网关和云中继。它是独立的社区项目，与 Meta Platforms, Inc. 无关，也未获其背书；Muse 是他们的商标，「Muse 风格」说的是我们欣赏的那种形态。</i></p>
-          </details>
-        </div>
-      </section>
-
-      <section class="news" id="news">
+      <section id="news">
         <h2><i class="en">News</i><i class="zh">动态</i></h2>
-        <ol>
+        <ul class="rows">
           <li>
-            <time datetime="2026-10-06">2026-10-06</time>
-            <div>
-              <h3><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.39" rel="noopener">0.1.39 · Keys</a></h3>
-              <p>
-                <i class="en">The allowance is a start; your own key or a plan you already pay for is the way on, and every client now says what each gives you. Eighteen providers in one catalogue, each marked with what its key covers — chat, the hands, pictures, clips; a ChatGPT plan signs in on every client and covers chat and the hands; where no provider draws, the app says in one sentence who would. A device shows and syncs the conversations of the account that is signed in and nothing of an earlier one's. On Ubuntu the hands' clicks land again, on a Mac the Computer Use helper keeps its permissions, on the iPhone and iPad the crash after onboarding is gone, every language is complete, and the Terminal edition is dropped.</i>
-                <i class="zh">免费额度是个开头，自己的 key 或你已经在付费的套餐才是往下走的路，现在每个客户端都会说清楚每一样能给你什么。十八家服务商在一份目录里，每家都标着它的 key 能做什么——对话、动手、画图、视频；ChatGPT 套餐在每个客户端都能登录，覆盖对话和动手；没人能画时，应用用一句话告诉你谁能。一台设备只显示、只同步当前登录账号的对话，之前账号的一条也不带。Ubuntu 上「手」的点击又落得到位置了，Mac 上 Computer Use 助手的权限留得住了，iPhone 和 iPad 上引导之后的闪退没有了，每种语言都齐了，Terminal 版不再有。</i>
-              </p>
-            </div>
+            <span class="k"><time datetime="2026-10-06">2026-10-06</time></span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.39" rel="noopener">0.1.39 · Keys</a> — <i class="en">your own key from a catalogue of eighteen providers, sign-in with a ChatGPT plan, and a device shows only the signed-in account's conversations. Clicks land again on Ubuntu, the Mac helper keeps its permissions, the iPad no longer crashes after onboarding.</i><i class="zh">从十八家服务商的目录里填自己的 key，用 ChatGPT 套餐登录，一台设备只显示当前登录账号的对话。Ubuntu 上点击又落得到位置，Mac 的助手留得住权限，iPad 引导之后不再闪退。</i></span>
           </li>
           <li>
-            <time datetime="2026-10-05">2026-10-05</time>
-            <div>
-              <h3><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.38" rel="noopener">0.1.38 · Loom</a></h3>
-              <p>
-                <i class="en">Side chats stay on the device that made them unless you say otherwise, so a new device gets the main conversation's newest three hundred lines in one pull; a device at work says so under its line on the others; the 413 that stopped computer use is gone (four screenshots of two megapixels at most in a request, sixteen megabytes at the relay); the desktop no longer re-reads every session log every two seconds. On a Mac the hands have a helper app of their own, nanoMuse Computer Use, which holds the permissions; on Ubuntu they were run on a real desktop and fixed where they failed. The iPhone's composer is a native field; every app can point at a relay of yours; a shorter README, AGENTS.md, a roadmap and the docs as a site.</i>
-                <i class="zh">旁聊默认留在写它的设备上，新设备一次只拉主聊天最新的三百条；一台设备在干活，别的设备会在那一行下面看到；卡住电脑操作的 413 没有了（一次请求最多四张、每张不超过两百万像素的截图，中继接受十六兆）；桌面端不再每两秒重读所有会话日志。Mac 上「手」有了自己的助手应用 nanoMuse Computer Use，权限归它；Ubuntu 上在真实桌面上跑了一遍，坏的地方修了。iPhone 的输入框换成原生文本框；每个应用都能指向你自己的中继；更短的 README、AGENTS.md、路线图，文档成了站点。</i>
-              </p>
-            </div>
+            <span class="k"><time datetime="2026-10-05">2026-10-05</time></span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.38" rel="noopener">0.1.38 · Loom</a> — <i class="en">side chats stay on the device that made them, a Mac helper app holds the hands' permissions, every app can point at a relay of yours, and the docs became a site.</i><i class="zh">旁聊留在写它的设备上，Mac 上「手」有了自己的助手应用，每个应用都能指向你自己的中继，文档成了站点。</i></span>
           </li>
           <li>
-            <time datetime="2026-10-05">2026-10-05</time>
-            <div>
-              <h3><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.37" rel="noopener">0.1.37 · Weave</a></h3>
-              <p>
-                <i class="en">The thread is woven tight: every device shows the account's one main conversation and the same side chats, merged in time and backfilled from the first conversation, each turn from another device saying where it was written — and your Muse's name follows you everywhere; a desktop signing in no longer resets it. The app wears its blue mark on the splash, the sign-in and the permission pages; the agent's steps show by default; Devices is a page of cards. Linux opens again from the launcher icon; on a Mac the system asks for Screen Recording and Accessibility at launch, screenshots take one path, and a black frame becomes a plain permission message; the iPad's composer returns when the keyboard took it away.</i>
-                <i class="zh">线织紧了：每台设备看到的都是账号里同一个主聊天和同一批旁聊，按时间合并、从最早那场对话开始回填，别的设备写的每一轮都标着来自哪里——Muse 的名字也跟着你走，桌面端登录不再把它重置回去。启动页、登录页和权限引导换上我们自己的蓝色标志；智能体的操作轨迹默认显示；设备页改成卡片。Linux 从图标能再次打开；Mac 上启动时系统就会请求屏幕录制和辅助功能，截图只走一条路，黑屏变成一句明白的权限提示；iPad 上被键盘带走的输入框会回来。</i>
-              </p>
-            </div>
+            <span class="k"><time datetime="2026-10-05">2026-10-05</time></span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.37" rel="noopener">0.1.37 · Weave</a> — <i class="en">one main conversation and the same side chats on every device, each turn saying where it was written; the Muse's name follows you; Linux opens from the launcher again.</i><i class="zh">每台设备看到同一个主聊天和同一批旁聊，每一轮都标着来自哪里；Muse 的名字跟着你走；Linux 从图标能再次打开。</i></span>
           </li>
-          <li>
-            <time datetime="2026-10-05">2026-10-05</time>
-            <div>
-              <h3><a href="https://github.com/nano-muse/nanoMuse/releases/tag/v0.1.36" rel="noopener">0.1.36 · Thread</a></h3>
-              <p>
-                <i class="en">Your conversations are one thread across your devices: signed in, the phone, the iPhone, the Mac and the PC show the same chats — the text travels through nanoMuse Cloud, files and images stay where they were made — and a message that starts with @Mac hands the work to that device's Muse; the iPhone takes such tasks too while the app is open. The desktop's hands run on UI-TARS-desktop's proven operator with the picture as the coordinate unit, so clicks land within a pixel on scaled displays. The iPhone gets a way back from voice to the keyboard, the phone's composer, a floating header, Rename chat and the missing settings; the face takes the click on a Mac, the splash is the logo, Ubuntu shows the icons. Sync is on by default when signed in — Data controls turns it off and deletes it.</i>
-                <i class="zh">你的对话在几台设备之间连成一条线：登录后，手机、iPhone、Mac 和 PC 看到同样的聊天——文字经 nanoMuse Cloud 传递，文件和图片留在原来的设备上——消息以 @Mac 开头就把活交给那台设备的 Muse；应用开着时 iPhone 也接。桌面端的手换上 UI-TARS-desktop 已经跑通的操作器，以图片为坐标单位，有缩放的屏幕上点击误差在一个像素内。iPhone 有了从语音回到键盘的路、手机的输入框、悬浮顶栏、「重命名聊天」和缺的设置；Mac 上点形象有反应了，启动页是 logo，Ubuntu 显示图标了。同步在登录后默认开启——「数据控制」里可以关掉并删除。</i>
-              </p>
-            </div>
-          </li>
-        </ol>
-        <p class="sub">
-          <a href="https://github.com/nano-muse/nanoMuse/releases" rel="noopener"><i class="en">All releases</i><i class="zh">全部版本</i> →</a>
-        </p>
-        <p class="sub">
-          <a href="https://nanomuse.cn/docs/roadmap"><i class="en">Roadmap: where help is wanted and where to start</i><i class="zh">路线图：哪里需要帮手、从哪里入手</i> →</a>
-        </p>
+        </ul>
       </section>
     </main>
 
     <footer>
-      <nav aria-label="Footer">
-        <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
-        <a href="https://github.com/nano-muse/nanoMuse/releases" rel="noopener"><i class="en">Releases</i><i class="zh">发布</i></a>
-        <a href="https://nanomuse.cn/docs/"><i class="en">Docs</i><i class="zh">文档</i></a>
-        <a href="https://github.com/nano-muse/nanoMuse/blob/main/CHANGELOG.md" rel="noopener">Changelog</a>
-        <a href="https://github.com/nano-muse/nanoMuse/blob/main/CONTRIBUTING.md" rel="noopener"><i class="en">Contributing</i><i class="zh">参与</i></a>
-        <a href="https://discord.gg/bkTySmm28X" rel="noopener">Discord</a>
-        <a href="https://github.com/nano-muse/nanoMuse/blob/main/LICENSE" rel="noopener">GPL-3.0</a>
-        <button type="button" id="theme" aria-label="Theme"><i class="en">Dark</i><i class="zh">深色</i></button>
-      </nav>
       <p>
-        <i class="en">nanoMuse is an independent community project, not affiliated with or endorsed by Meta Platforms, Inc.; Muse is a trademark of Meta Platforms, Inc. The phone app is based on OpenMinis 1.13 (GPL-3.0), modified since 2026-09-24. Nothing is sold under this name.</i>
-        <i class="zh">nanoMuse 是独立的社区项目，与 Meta Platforms, Inc. 无关，也未获其背书；Muse 是 Meta Platforms, Inc. 的商标。手机 App 基于 OpenMinis 1.13（GPL-3.0），自 2026-09-24 起修改。不会以这个名字出售任何东西。</i>
+        <i class="en"><a href="https://github.com/nano-muse/nanoMuse/blob/main/LICENSE" rel="noopener">GPL-3.0-or-later</a>. The phone app is based on <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 1.13 (GPL-3.0), modified since 2026-09-24. nanoMuse is an independent community project, not affiliated with or endorsed by Meta Platforms, Inc.; Muse is a trademark of Meta Platforms, Inc.</i>
+        <i class="zh"><a href="https://github.com/nano-muse/nanoMuse/blob/main/LICENSE" rel="noopener">GPL-3.0-or-later</a>。手机应用基于 <a href="https://github.com/OpenMinis/OpenMinis" rel="noopener">OpenMinis</a> 1.13（GPL-3.0），自 2026-09-24 起修改。nanoMuse 是独立的社区项目，与 Meta Platforms, Inc. 无关，也未获其背书；Muse 是 Meta Platforms, Inc. 的商标。</i>
       </p>
     </footer>
 
     <script>
       (function () {
         var root = document.documentElement;
-        var saved = localStorage.getItem("nm-lang");
-        var lang = saved ? (saved === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
+        var lang = root.getAttribute("data-lang") || "en";
         function apply(l) {
           root.lang = l === "zh" ? "zh-CN" : "en";
           root.setAttribute("data-lang", l);
@@ -451,93 +164,9 @@
         apply(lang);
         document.getElementById("lang").addEventListener("click", function () {
           lang = lang === "zh" ? "en" : "zh";
-          localStorage.setItem("nm-lang", lang);
+          try { localStorage.setItem("nm-lang", lang); } catch (e) {}
           apply(lang);
         });
-      })();
-      (function () {
-        // The hero's Download button: the platform this browser runs on, when there is one
-        // build for it; otherwise the list below. A phone's browser gets the APK.
-        var ua = navigator.userAgent || "";
-        var os = /Android/i.test(ua) ? "android"
-          : /iPhone|iPad|iPod/i.test(ua) ? "ios"
-          : /Windows/i.test(ua) ? "windows"
-          : /Mac/i.test(ua) ? "mac"
-          : /Linux|X11/i.test(ua) ? "linux" : "";
-        var names = { android: "Android", windows: "Windows", mac: "macOS", linux: "Linux", ios: "" };
-        var direct = {
-          android: "https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-0.1.39-arm64.apk",
-          windows: "https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-win-x64.exe",
-          linux: "https://github.com/nano-muse/nanoMuse/releases/download/v0.1.39/nanoMuse-Desktop-0.1.39-linux-x64.AppImage"
-        };
-        var btn = document.getElementById("dl");
-        if (!btn || !os) return;
-        btn.setAttribute("data-platform", os);
-        var label = btn.querySelector("[data-platform-name]");
-        if (label && names[os]) label.textContent = " · " + names[os];
-        if (direct[os]) btn.href = direct[os];
-        else if (os === "mac") btn.href = "#dl-desktop";
-        else if (os === "ios") btn.href = "#dl-web";
-        Array.prototype.forEach.call(document.querySelectorAll(".dl a[data-os]"), function (a) {
-          if (a.getAttribute("data-os") === os) a.classList.add("mine");
-        });
-      })();
-      (function () {
-        // Where the packages come from: GitHub, or the mirror at nanomuse.cn/dl/<tag>/<file>
-        // (kept by the site's server, see demo/showcase/mirror in the nanoMuse repository).
-        // Every download link on the page is rewritten in place and the choice is remembered.
-        // GitHub is the default everywhere: measured from China it was several times faster
-        // than the mirror, which stays as the fallback for when a download fails.
-        var GH = "https://github.com/nano-muse/nanoMuse/releases/download/";
-        var MIRROR = "https://nanomuse.cn/dl/";
-        var links = Array.prototype.slice.call(document.querySelectorAll('a[href^="' + GH + '"]'));
-        var buttons = document.querySelectorAll(".source .pill");
-        if (!links.length || !buttons.length) return;
-        links.forEach(function (a) { a.setAttribute("data-github", a.getAttribute("href")); });
-        function apply(src) {
-          links.forEach(function (a) {
-            var gh = a.getAttribute("data-github");
-            a.href = src === "mirror" ? MIRROR + gh.slice(GH.length) : gh;
-          });
-          Array.prototype.forEach.call(buttons, function (b) { b.classList.toggle("on", b.getAttribute("data-source") === src); });
-          document.documentElement.setAttribute("data-source", src);
-        }
-        var saved = localStorage.getItem("nm-source");
-        apply(saved === "mirror" || saved === "github" ? saved : "github");
-        Array.prototype.forEach.call(buttons, function (b) {
-          b.addEventListener("click", function () {
-            var src = b.getAttribute("data-source");
-            localStorage.setItem("nm-source", src);
-            apply(src);
-          });
-        });
-      })();
-      (function () {
-        Array.prototype.forEach.call(document.querySelectorAll(".copy"), function (b) {
-          b.addEventListener("click", function () {
-            var text = b.getAttribute("data-copy") || "";
-            var done = function () { b.classList.add("done"); setTimeout(function () { b.classList.remove("done"); }, 1400); };
-            if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, done); else done();
-          });
-        });
-      })();
-      (function () {
-        var b = document.getElementById("theme");
-        if (!b) return;
-        function paint() {
-          var dark = document.documentElement.getAttribute("data-theme") === "dark";
-          b.innerHTML = dark ? '<i class="en">Light</i><i class="zh">浅色</i>' : '<i class="en">Dark</i><i class="zh">深色</i>';
-          var m = document.querySelector('meta[name="theme-color"]');
-          if (m) m.setAttribute("content", dark ? "#000000" : "#ffffff");
-        }
-        b.addEventListener("click", function () {
-          var dark = document.documentElement.getAttribute("data-theme") === "dark";
-          if (dark) document.documentElement.removeAttribute("data-theme");
-          else document.documentElement.setAttribute("data-theme", "dark");
-          try { localStorage.setItem("nm-theme", dark ? "light" : "dark"); } catch (e) {}
-          paint();
-        });
-        paint();
       })();
     </script>
   </body>
