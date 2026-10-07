@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as d,a3 as o}from"./chunks/framework.qCVWde4n.js";const p=JSON.parse('{"title":"nanoMuse brand","description":"","frontmatter":{},"headers":[],"relativePath":"brand.md","filePath":"brand.md"}'),r={name:"brand.md"};function n(i,e,s,h,c,l){return a(),d("div",null,[...e[0]||(e[0]=[o("",18)])])}const m=t(r,[["render",n]]);export{p as __pageData,m as default};
