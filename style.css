@@ -101,7 +101,9 @@ html[data-theme="dark"] #theme .sun { display: block; }
    never scrolls on its own. */
 .demo {
   margin-top: var(--bar);
-  height: calc(100svh - var(--bar));
+  /* a little short of the window: the top of the next section shows under the fold, so the
+     page reads as a page and not as the one screen */
+  height: calc(100svh - var(--bar) - 4rem);
   min-height: 560px;
   display: flex; flex-direction: column;
 }
@@ -116,12 +118,34 @@ html[data-theme="dark"] #theme .sun { display: block; }
 .demo-frame { flex: 1; min-height: 0; position: relative; background: var(--bg); }
 .demo-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 .demo-noscript { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 20px; text-align: center; }
+/* "More below": a small line under the frame with a chevron, a link to the next section. It
+   bobs once in a while (not for prefers-reduced-motion) and goes once the visitor has scrolled. */
+.more {
+  flex: none; align-self: center;
+  display: inline-flex; align-items: center; gap: 4px;
+  margin: 6px 0 4px; padding: 4px 12px 4px 14px;
+  border: 1px solid var(--line); border-radius: 999px;
+  color: var(--muted); font-size: 0.82rem; text-decoration: none;
+  transition: opacity 0.4s, color 0.2s;
+}
+.more:hover { color: var(--fg); }
+.more:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.more svg { width: 14px; height: 14px; }
+html.scrolled .more { opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .more svg { animation: more-bob 2.4s ease-in-out infinite; }
+  @keyframes more-bob {
+    0%, 70%, 100% { transform: translateY(0); }
+    80% { transform: translateY(2px); }
+    90% { transform: translateY(0); }
+  }
+}
 section { scroll-margin-top: calc(var(--bar) + 1rem); }
 /* The still, for screens the demo cannot be used on: no frame is loaded there. */
 .demo-still { display: none; }
 @media (max-width: 999px) {
   .demo { height: auto; min-height: 0; }
-  .demo-frame { display: none; }
+  .demo-frame, .more { display: none; }
   .demo-still { display: block; padding: 1.5rem 20px 0.5rem; }
   .demo-still .shot { max-width: 20rem; margin: 0 auto; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
   .demo-still p { max-width: 44rem; margin: 1rem auto 0; color: var(--muted); font-size: 0.95em; text-align: center; }

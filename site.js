@@ -7,6 +7,13 @@
 
   var root = document.documentElement;
   var DEMO = "https://demo.nanomuse.dev";
+  // a local preview of this page may point the frame at a showcase served on this machine
+  // (python3 -m http.server from demo/showcase/site/page/, or the gateway): ?demo=http://localhost:PORT,
+  // honoured only while this page itself is on localhost
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    var want = new URLSearchParams(location.search).get("demo");
+    if (want && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(want)) DEMO = want;
+  }
   var frame = document.getElementById("demo-frame");
   var title = document.querySelector("title");
 
@@ -127,8 +134,9 @@
   // ---- the demo frame -------------------------------------------------------------------
   // Loaded only where it can be used (from 1000 px, the width at which the showcase keeps the
   // phone and its column side by side and fits them into the height it is given); narrower
-  // screens see the still and a link. The showcase starts nothing until the visitor taps the
-  // phone (?embed=1).
+  // screens see the still and a link. The phone in the frame turns itself on; the showcase
+  // starts a Muse once it has reason to think a person is looking (?embed=1,
+  // demo/showcase/site/page/page.js in the main repository).
   if (frame) {
     var wide = window.matchMedia("(min-width: 1000px)");
     var load = function () {
@@ -138,5 +146,29 @@
     load();
     if (wide.addEventListener) wide.addEventListener("change", load);
     else if (wide.addListener) wide.addListener(load);
+
+    // A frame takes the wheel, so with the pointer over the demo the page would not move.
+    // Where the showcase has nothing of its own to scroll under the pointer it hands the
+    // wheel up ({type: "nanomuse:wheel", deltaX, deltaY}, in pixels) and the page scrolls by it.
+    window.addEventListener("message", function (ev) {
+      if (ev.origin !== DEMO || ev.source !== frame.contentWindow) return;
+      var d = ev.data;
+      if (!d || d.type !== "nanomuse:wheel") return;
+      var dy = Number(d.deltaY) || 0;
+      if (!dy) return;
+      window.scrollBy({ top: dy, left: 0, behavior: "instant" });
+    });
   }
+
+  // ---- "More below" ---------------------------------------------------------------------
+  // The line under the frame goes once the visitor has scrolled; the page's own smooth
+  // scrolling takes the click to the next section.
+  var onScroll = function () {
+    if (window.scrollY > 40) {
+      root.classList.add("scrolled");
+      window.removeEventListener("scroll", onScroll);
+    }
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 })();

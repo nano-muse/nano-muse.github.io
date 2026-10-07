@@ -65,14 +65,18 @@
           <i class="zh">开源的个人智能体，面向你的每一台设备。</i>
         </h1>
         <p>
-          <i class="en">Below: a nanoMuse on a simulated phone, free for half an hour. Tap the screen to start.</i>
-          <i class="zh">下面是一台模拟手机上的 nanoMuse，免费用半小时。点一下屏幕开机。</i>
+          <i class="en">Below: a nanoMuse on a simulated phone, free for half an hour. The phone is already on.</i>
+          <i class="zh">下面是一台模拟手机上的 nanoMuse，免费用半小时。手机已经开着。</i>
         </p>
       </div>
       <div class="demo-frame">
         <iframe id="demo-frame" title="nanoMuse on a simulated phone" allow="clipboard-write"></iframe>
         <noscript><p class="demo-noscript"><i class="en">The demo is at <a href="https://demo.nanomuse.dev/">demo.nanomuse.dev</a>.</i><i class="zh">演示在 <a href="https://demo.nanomuse.dev/">demo.nanomuse.dev</a>。</i></p></noscript>
       </div>
+      <a class="more" href="#film" id="more">
+        <i class="en">More below</i><i class="zh">往下看</i>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+      </a>
       <div class="demo-still">
         <div class="shot">
           <i class="en"><img src="assets/chat-approval.webp" width="360" height="780" alt="The chat on a phone: before deleting in the workspace, the agent stops and asks — once, this chat, always for the workspace, or deny" /></i>
@@ -126,8 +130,8 @@
           <i class="zh">它是谁、它知道你的什么、它什么时候醒来，都是你能读也能改的 Markdown 文件。</i>
         </p>
         <p class="open-source" id="open-source">
-          <i class="en"><b>Free, open source, non-profit — let's build it together.</b> The phone app, the desktop app, the web console and the relay that joins them are one repository under GPL-3.0-or-later. Sign in to the community relay and you get a free allowance of model use and your devices in sync; with a key of your own the runtime needs no account at all, and the same relay runs on a server of yours.</i>
-          <i class="zh"><b>免费、开源、非盈利——一起把它做好。</b>手机应用、桌面应用、网页控制台和把它们连起来的中继在同一个仓库里，GPL-3.0-or-later。登录社区中继，有一份免费的模型额度，设备之间互相同步；用自己的 key，运行时完全不需要账号；同一个中继也可以跑在你自己的服务器上。</i>
+          <i class="en"><b>Free, open source, non-profit. Let's build it together.</b> The phone app, the desktop app, the web console and the relay that joins them are one repository under GPL-3.0-or-later. Sign in to the community relay and you get a free allowance of model use and your devices in sync; with a key of your own the runtime needs no account at all, and the same relay runs on a server of yours.</i>
+          <i class="zh"><b>免费、开源、非营利。一起把它做好。</b>手机应用、桌面应用、网页控制台和把它们连起来的中继在同一个仓库里，GPL-3.0-or-later。登录社区中继，有一份免费的模型额度，设备之间互相同步；用自己的 key，运行时完全不需要账号；同一个中继也可以跑在你自己的服务器上。</i>
         </p>
       </section>
 
@@ -144,7 +148,7 @@
           </li>
           <li>
             <span class="k">iPhone, iPad</span>
-            <span class="v"><a href="https://testflight.apple.com/join/ZHexbDqc" rel="noopener">TestFlight</a> — <i class="en">a beta · <a href="docs/ios">iPhone and iPad in the docs</a></i><i class="zh">测试版 · <a href="docs/ios">文档里的 iPhone 和 iPad 一页</a></i></span>
+            <span class="v"><a href="https://testflight.apple.com/join/ZHexbDqc" rel="noopener">TestFlight</a> · <i class="en">a beta; the public link delivers the build once Apple's beta review has passed · <a href="docs/ios">iPhone and iPad in the docs</a></i><i class="zh">测试版；公开链接要等 Apple 的测试审核通过后才能装到 · <a href="docs/ios">文档里的 iPhone 和 iPad 一页</a></i></span>
           </li>
           <li>
             <span class="k">Windows 10+</span>
@@ -163,11 +167,11 @@
           </li>
           <li>
             <span class="k"><i class="en">Browser</i><i class="zh">浏览器</i></span>
-            <span class="v"><a href="https://demo.nanomuse.dev/">demo.nanomuse.dev</a> — <i class="en">the demo at the top of this page, on its own: a nanoMuse on a simulated phone, after a sign-in</i><i class="zh">页首的演示，单独一页：一台模拟手机上的 nanoMuse，登录后体验</i></span>
+            <span class="v"><a href="https://demo.nanomuse.dev/">demo.nanomuse.dev</a> · <i class="en">the demo at the top of this page, on its own: a nanoMuse on a simulated phone, after a sign-in</i><i class="zh">页首的演示，单独一页：一台模拟手机上的 nanoMuse，登录后体验</i></span>
           </li>
           <li>
             <span class="k">Docker</span>
-            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/pkgs/container/nanomuse"><code>ghcr.io/nano-muse/nanomuse:0.1.41</code></a> — <i class="en">the runtime for the web app on a computer of yours; a relay of your own: <a href="docs/self-hosting">self-hosting</a></i><i class="zh">在你自己的电脑上跑网页版的运行时；自己的中继见<a href="docs/self-hosting">自部署</a></i></span>
+            <span class="v"><a href="https://github.com/nano-muse/nanoMuse/pkgs/container/nanomuse"><code>ghcr.io/nano-muse/nanomuse:0.1.41</code></a> · <i class="en">the runtime for the web app on a computer of yours; a relay of your own: <a href="docs/self-hosting">self-hosting</a></i><i class="zh">在你自己的电脑上跑网页版的运行时；自己的中继见<a href="docs/self-hosting">自部署</a></i></span>
           </li>
           <li>
             <span class="k"><i class="en">Every version</i><i class="zh">全部版本</i></span>
