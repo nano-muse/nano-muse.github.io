@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      // Language and theme before first paint: the saved choice, else the browser's.
+      // Language before first paint: the saved choice, else the browser's; the theme is light unless dark was chosen here.
       (function () {
         try {
           var d = document.documentElement;
@@ -11,9 +11,8 @@
           var l = s ? (s === "zh" ? "zh" : "en") : (/^zh/i.test(navigator.language || "") ? "zh" : "en");
           d.setAttribute("data-lang", l);
           d.lang = l === "zh" ? "zh-CN" : "en";
-          var t = localStorage.getItem("nm-theme");
-          if (t !== "dark" && t !== "light") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          d.setAttribute("data-theme", t);
+          // Light unless this visitor chose dark: the page is not darkened by the system's setting.
+          d.setAttribute("data-theme", localStorage.getItem("nm-theme") === "dark" ? "dark" : "light");
         } catch (e) {}
       })();
     </script>
@@ -25,8 +24,7 @@
     <meta property="og:image" content="https://nanomuse.cn/assets/social-card.png" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://nanomuse.cn/own-key/" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="../assets/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://nanomuse.cn/own-key/" />
@@ -70,7 +68,7 @@
       <table>
         <thead><tr><th></th><th><i class="en">Provider</i><i class="zh">服务商</i></th><th><i class="en">Chat model</i><i class="zh">对话模型</i></th><th><i class="en">Hands model</i><i class="zh">手的模型</i></th><th><i class="en">Base URL</i><i class="zh">地址</i></th></tr></thead>
         <tbody>
-          <tr><td><i class="en">Mainland China</i><i class="zh">中国大陆</i></td><td><b>Alibaba Cloud Bailian</b></td><td><code>deepseek-v4.1-flash</code></td><td><code>qwen3.8-27b</code></td><td><code>https://dashscope.aliyuncs.com/compatible-mode/v1</code></td></tr>
+          <tr><td><i class="en">Mainland China</i><i class="zh">中国大陆</i></td><td><b><i class="en">Alibaba Cloud Bailian</i><i class="zh">阿里云百炼</i></b></td><td><code>deepseek-v4.1-flash</code></td><td><code>qwen3.8-27b</code></td><td><code>https://dashscope.aliyuncs.com/compatible-mode/v1</code></td></tr>
           <tr><td><i class="en">Everywhere else</i><i class="zh">海外</i></td><td><b>OpenRouter</b></td><td><code>deepseek/deepseek-v4.1-flash</code></td><td><code>qwen/qwen3.8-27b</code></td><td><code>https://openrouter.ai/api/v1</code></td></tr>
         </tbody>
       </table>
@@ -160,7 +158,7 @@
       </p>
 
       <div class="cta">
-        <a class="btn primary" href="https://nanomuse.cn/web/"><i class="en">Open nanoMuse in the browser</i><i class="zh">打开网页版</i></a>
+        <a class="btn primary" href="https://demo.nanomuse.dev/"><i class="en">Try the demo in the browser</i><i class="zh">打开浏览器里的演示</i></a>
         <a class="btn" href="../#open-source"><i class="en">How nanoMuse is paid for</i><i class="zh">费用从哪来</i></a>
         <a class="btn" href="https://github.com/nano-muse/nanoMuse/blob/main/docs/own-key.md" rel="noopener"><i class="en">This page as Markdown</i><i class="zh">本页的 Markdown 版</i></a>
       </div>
@@ -169,7 +167,7 @@
     <footer>
       <nav aria-label="Footer">
         <a href="https://github.com/nano-muse/nanoMuse" rel="noopener">GitHub</a>
-        <a href="https://github.com/nano-muse/nanoMuse/blob/main/docs/cloud.md" rel="noopener"><i class="en">nanoMuse Cloud</i><i class="zh">nanoMuse Cloud 说明</i></a>
+        <a href="../docs/cloud"><i class="en">nanoMuse Cloud</i><i class="zh">nanoMuse Cloud 说明</i></a>
         <a href="../privacy/"><i class="en">Privacy</i><i class="zh">隐私</i></a>
       </nav>
       <p>
