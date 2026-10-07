@@ -134,6 +134,10 @@ section + section { margin-top: 2.75rem; padding-top: 2rem; border-top: 1px soli
 h2 { font-size: 1.15rem; }
 .meta, .note { color: var(--muted); font-size: 0.95em; }
 .note { margin-top: 1rem; }
+/* The film: one <video> per language in a block wrapper; data-lang hides the other one. The
+   poster fills the frame until play is pressed. */
+.film { margin-top: 1rem; }
+.film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 1px solid var(--line); border-radius: 12px; background: #000; }
 #what p { color: var(--fg); }
 #what .open-source { color: var(--muted); }
 

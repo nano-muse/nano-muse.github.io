@@ -43,6 +43,7 @@
       </a>
       <nav aria-label="Site">
         <a href="docs/"><i class="en">Docs</i><i class="zh">文档</i></a>
+        <a href="#film"><i class="en">Film</i><i class="zh">宣传片</i></a>
         <a href="#download"><i class="en">Download</i><i class="zh">下载</i></a>
         <a class="stars" id="stars" href="https://github.com/nano-muse/nanoMuse" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L12 16.9l-5.3 2.8 1.1-5.9-4.3-4.1 5.9-.8z" /></svg>
@@ -85,6 +86,31 @@
     </section>
 
     <main class="below">
+      <section id="film">
+        <h2><i class="en">The film</i><i class="zh">宣传片</i></h2>
+        <p>
+          <i class="en">74 seconds: what nanoMuse does on your phone, your computer and the web. In English and Chinese.</i>
+          <i class="zh">74 秒，看 nanoMuse 在手机、电脑和网页上做什么。有英文和中文两版。</i>
+        </p>
+        <!-- One player per language; the page's language switch shows one. The files are in
+             media/film/ of this repository, served from nanomuse.cn; the README of nanoMuse links
+             to them. No autoplay, no loop: the poster waits until the visitor presses play. -->
+        <div class="film en">
+          <video controls playsinline preload="metadata" poster="/media/film/poster-en.png" width="1920" height="1080">
+            <source src="/media/film/nanomuse-film-en-web.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="film zh">
+          <video controls playsinline preload="metadata" poster="/media/film/poster-zh.png" width="1920" height="1080">
+            <source src="/media/film/nanomuse-film-zh-web.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p class="meta">
+          <i class="en">The file: <a href="/media/film/nanomuse-film-en-web.mp4">English</a> · <a href="/media/film/nanomuse-film-zh-web.mp4">中文</a></i>
+          <i class="zh">文件：<a href="/media/film/nanomuse-film-en-web.mp4">English</a> · <a href="/media/film/nanomuse-film-zh-web.mp4">中文</a></i>
+        </p>
+      </section>
+
       <section id="what">
         <h2><i class="en">What it is</i><i class="zh">这是什么</i></h2>
         <p>
