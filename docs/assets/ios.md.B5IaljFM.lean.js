@@ -1,0 +1,1 @@
+import{_ as t,o,c as s,a3 as n}from"./chunks/framework.qCVWde4n.js";const u=JSON.parse('{"title":"iOS","description":"","frontmatter":{},"headers":[],"relativePath":"ios.md","filePath":"ios.md"}'),a={name:"ios.md"};function i(d,e,r,h,c,l){return o(),s("div",null,[...e[0]||(e[0]=[n("",41)])])}const m=t(a,[["render",i]]);export{u as __pageData,m as default};
