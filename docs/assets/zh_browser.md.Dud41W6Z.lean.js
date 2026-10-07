@@ -1,0 +1,1 @@
+import{_ as t,o,c as a,a3 as s}from"./chunks/framework.qCVWde4n.js";const u=JSON.parse('{"title":"浏览器","description":"","frontmatter":{},"headers":[],"relativePath":"zh/browser.md","filePath":"zh/browser.md"}'),d={name:"zh/browser.md"};function i(n,e,r,c,l,p){return o(),a("div",null,[...e[0]||(e[0]=[s("",30)])])}const k=t(d,[["render",i]]);export{u as __pageData,k as default};

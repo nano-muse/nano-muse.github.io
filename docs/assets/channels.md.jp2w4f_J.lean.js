@@ -1,1 +1,0 @@
-import{_ as t,o,c as a,a2 as s}from"./chunks/framework.Boholvbs.js";const g=JSON.parse('{"title":"Chat apps","description":"","frontmatter":{},"headers":[],"relativePath":"channels.md","filePath":"channels.md"}'),n={name:"channels.md"};function i(r,e,l,h,d,c){return o(),a("div",null,[...e[0]||(e[0]=[s("",51)])])}const m=t(n,[["render",i]]);export{g as __pageData,m as default};

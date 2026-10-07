@@ -1,1 +1,0 @@
-import{_ as t,o,c as a,a2 as s}from"./chunks/framework.Boholvbs.js";const u=JSON.parse('{"title":"Sentinel","description":"","frontmatter":{},"headers":[],"relativePath":"sentinel.md","filePath":"sentinel.md"}'),n={name:"sentinel.md"};function d(i,e,r,c,l,h){return o(),a("div",null,[...e[0]||(e[0]=[s("",48)])])}const m=t(n,[["render",d]]);export{u as __pageData,m as default};

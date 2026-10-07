@@ -1,1 +1,0 @@
-import{_ as i,o as a,c as e,a2 as n}from"./chunks/framework.Boholvbs.js";const F=JSON.parse('{"title":"CLI","description":"","frontmatter":{},"headers":[],"relativePath":"cli.md","filePath":"cli.md"}'),t={name:"cli.md"};function h(l,s,k,p,d,r){return a(),e("div",null,[...s[0]||(s[0]=[n("",43)])])}const g=i(t,[["render",h]]);export{F as __pageData,g as default};
