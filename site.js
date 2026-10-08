@@ -133,7 +133,7 @@
 
   // ---- the demo frame -------------------------------------------------------------------
   // Loaded only where it can be used (from 1000 px, the width at which the showcase keeps the
-  // phone and its column side by side and fits them into the height it is given); narrower
+  // phone and its panel side by side and fits them into the height it is given); narrower
   // screens see the still and a link. The phone in the frame turns itself on; the showcase
   // starts a Muse once it has reason to think a person is looking (?embed=1,
   // demo/showcase/site/page/page.js in the main repository).
@@ -146,18 +146,9 @@
     load();
     if (wide.addEventListener) wide.addEventListener("change", load);
     else if (wide.addListener) wide.addListener(load);
-
-    // A frame takes the wheel, so with the pointer over the demo the page would not move.
-    // Where the showcase has nothing of its own to scroll under the pointer it hands the
-    // wheel up ({type: "nanomuse:wheel", deltaX, deltaY}, in pixels) and the page scrolls by it.
-    window.addEventListener("message", function (ev) {
-      if (ev.origin !== DEMO || ev.source !== frame.contentWindow) return;
-      var d = ev.data;
-      if (!d || d.type !== "nanomuse:wheel") return;
-      var dy = Number(d.deltaY) || 0;
-      if (!dy) return;
-      window.scrollBy({ top: dy, left: 0, behavior: "instant" });
-    });
+    // Nothing in the showcase page scrolls (it lays itself out in the frame's height), so a
+    // wheel turned over the frame moves this page: the browser hands the scroll on to the
+    // parent when the frame has nowhere to go. Over the phone's screen the phone keeps it.
   }
 
   // ---- "More below" ---------------------------------------------------------------------

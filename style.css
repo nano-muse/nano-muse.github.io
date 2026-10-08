@@ -96,14 +96,13 @@ html[data-theme="dark"] #theme .sun { display: block; }
   .bar nav a:not(.stars) { display: none; }
 }
 
-/* ---- The first screen: the demo. Under the bar, one line, then the frame to the bottom of
-   the window. The showcase page fits itself into whatever height it is given, so the frame
-   never scrolls on its own. */
+/* ---- The first screen: the demo. Under the bar, one line, then the frame, then the "More
+   below" line at the bottom of the window. The showcase page lays itself out in whatever height
+   the frame has (the phone scaled, the panel beside it), so nothing scrolls inside the frame
+   or inside this section; the page's own scrolling is the only one. */
 .demo {
   margin-top: var(--bar);
-  /* a little short of the window: the top of the next section shows under the fold, so the
-     page reads as a page and not as the one screen */
-  height: calc(100svh - var(--bar) - 4rem);
+  height: calc(100svh - var(--bar));
   min-height: 560px;
   display: flex; flex-direction: column;
 }
@@ -141,14 +140,19 @@ html.scrolled .more { opacity: 0; pointer-events: none; }
   }
 }
 section { scroll-margin-top: calc(var(--bar) + 1rem); }
-/* The still, for screens the demo cannot be used on: no frame is loaded there. */
+/* The still, for screens the demo cannot be used on: no frame is loaded there. The section is
+   still one screen: the picture takes the height left between the line above and the sentence
+   below, whole, never cut. */
 .demo-still { display: none; }
 @media (max-width: 999px) {
-  .demo { height: auto; min-height: 0; }
-  .demo-frame, .more { display: none; }
-  .demo-still { display: block; padding: 1.5rem 20px 0.5rem; }
-  .demo-still .shot { max-width: 20rem; margin: 0 auto; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
-  .demo-still p { max-width: 44rem; margin: 1rem auto 0; color: var(--muted); font-size: 0.95em; text-align: center; }
+  .demo-frame { display: none; }
+  .demo-still { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; padding: 1rem 20px 0.5rem; }
+  .more { order: 1; }
+  .demo-still .shot { flex: 1 1 auto; min-height: 0; width: 100%; max-width: 20rem; }
+  /* :where() keeps the language rule above it the stronger one, so the other picture stays hidden */
+  .demo-still .shot > :where(i) { display: flex; justify-content: center; height: 100%; }
+  .demo-still .shot img { width: auto; height: auto; max-width: 100%; max-height: 100%; border: 1px solid var(--line); border-radius: 18px; }
+  .demo-still p { flex: none; max-width: 44rem; margin: 0.75rem auto 0; color: var(--muted); font-size: 0.95em; text-align: center; }
 }
 
 /* ---- Below the demo: one column, short sections. */
