@@ -1,0 +1,1 @@
+import{_ as t,o,c as a,a3 as n}from"./chunks/framework.qCVWde4n.js";const p=JSON.parse('{"title":"Roadmap","description":"","frontmatter":{},"headers":[],"relativePath":"roadmap.md","filePath":"roadmap.md"}'),s={name:"roadmap.md"};function r(d,e,i,h,c,l){return o(),a("div",null,[...e[0]||(e[0]=[n("",32)])])}const m=t(s,[["render",r]]);export{p as __pageData,m as default};
