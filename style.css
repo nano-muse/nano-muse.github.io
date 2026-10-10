@@ -214,7 +214,8 @@ footer nav a:hover { color: var(--fg); }
 .doc table { width: 100%; border-collapse: collapse; margin-top: 0.8em; font-size: 0.95em; }
 .doc th, .doc td { text-align: left; padding: 0.5em 0.6em; border-bottom: 1px solid var(--line); vertical-align: top; }
 .doc th { color: var(--muted); font-weight: 600; }
-.doc .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.25rem; }
+/* The row of buttons at the end of a small page, and under the Vision section of the homepage. */
+.cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.25rem; }
 .btn {
   display: inline-block; padding: 0.45em 0.9em; border: 1px solid var(--line); border-radius: 6px;
   color: var(--fg); text-decoration: none; font-weight: 500; line-height: 1.3;
