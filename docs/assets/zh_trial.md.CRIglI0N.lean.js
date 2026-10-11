@@ -1,0 +1,1 @@
+import{_ as a,o,c as t,a3 as r}from"./chunks/framework.qCVWde4n.js";const u=JSON.parse('{"title":"一个账号，所有设备","description":"","frontmatter":{},"headers":[],"relativePath":"zh/trial.md","filePath":"zh/trial.md"}'),h={name:"zh/trial.md"};function n(l,e,s,d,i,p){return o(),t("div",null,[...e[0]||(e[0]=[r("",23)])])}const _=a(h,[["render",n]]);export{u as __pageData,_ as default};

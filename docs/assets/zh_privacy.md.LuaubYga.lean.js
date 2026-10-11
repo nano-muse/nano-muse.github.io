@@ -1,1 +1,0 @@
-import{_ as a,o,c as n,ag as t}from"./chunks/framework.3xxlx4Qi.js";const u=JSON.parse('{"title":"隐私","description":"","frontmatter":{},"headers":[],"relativePath":"zh/privacy.md","filePath":"zh/privacy.md"}'),s={name:"zh/privacy.md"};function r(i,e,l,d,c,p){return o(),n("div",null,[...e[0]||(e[0]=[t("",16)])])}const m=a(s,[["render",r]]);export{u as __pageData,m as default};

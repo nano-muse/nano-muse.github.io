@@ -1,1 +1,0 @@
-import{_ as t,o as s,c as o,ag as a}from"./chunks/framework.3xxlx4Qi.js";const k=JSON.parse('{"title":"Operating the phone","description":"","frontmatter":{},"headers":[],"relativePath":"gui.md","filePath":"gui.md"}'),i={name:"gui.md"};function n(h,e,d,r,c,p){return s(),o("div",null,[...e[0]||(e[0]=[a("",96)])])}const u=t(i,[["render",n]]);export{k as __pageData,u as default};
