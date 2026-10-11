@@ -1,0 +1,1 @@
+import{_ as t,o,c as s,ag as a}from"./chunks/framework.3xxlx4Qi.js";const u=JSON.parse('{"title":"The browser","description":"","frontmatter":{},"headers":[],"relativePath":"browser.md","filePath":"browser.md"}'),n={name:"browser.md"};function r(i,e,h,d,c,l){return o(),s("div",null,[...e[0]||(e[0]=[a("",30)])])}const g=t(n,[["render",r]]);export{u as __pageData,g as default};
