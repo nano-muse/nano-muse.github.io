@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as t,ag as d}from"./chunks/framework.3xxlx4Qi.js";const g=JSON.parse('{"title":"形象工作室","description":"","frontmatter":{},"headers":[],"relativePath":"zh/avatar.md","filePath":"zh/avatar.md"}'),c={name:"zh/avatar.md"};function r(i,o,n,s,l,m){return a(),t("div",null,[...o[0]||(o[0]=[d("",7)])])}const p=e(c,[["render",r]]);export{g as __pageData,p as default};

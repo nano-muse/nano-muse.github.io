@@ -1,0 +1,1 @@
+import{_ as i,o as a,c as n,ag as h}from"./chunks/framework.3xxlx4Qi.js";const o=JSON.parse('{"title":"命令行（CLI）","description":"","frontmatter":{},"headers":[],"relativePath":"zh/cli.md","filePath":"zh/cli.md"}'),t={name:"zh/cli.md"};function e(l,s,k,p,d,F){return a(),n("div",null,[...s[0]||(s[0]=[h("",49)])])}const g=i(t,[["render",e]]);export{o as __pageData,g as default};
