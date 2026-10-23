@@ -1,1 +1,0 @@
-import{_ as t,o,c as a,a3 as i}from"./chunks/framework.qCVWde4n.js";const u=JSON.parse('{"title":"The avatar studio","description":"","frontmatter":{},"headers":[],"relativePath":"avatar.md","filePath":"avatar.md"}'),s={name:"avatar.md"};function n(h,e,r,d,c,l){return o(),a("div",null,[...e[0]||(e[0]=[i("",11)])])}const m=t(s,[["render",n]]);export{u as __pageData,m as default};

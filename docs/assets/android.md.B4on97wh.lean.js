@@ -1,0 +1,1 @@
+import{_ as t,o,c as s,a3 as a}from"./chunks/framework.qCVWde4n.js";const u=JSON.parse('{"title":"The Android app","description":"","frontmatter":{},"headers":[],"relativePath":"android.md","filePath":"android.md"}'),n={name:"android.md"};function i(d,e,r,h,c,l){return o(),s("div",null,[...e[0]||(e[0]=[a("",46)])])}const m=t(n,[["render",i]]);export{u as __pageData,m as default};
