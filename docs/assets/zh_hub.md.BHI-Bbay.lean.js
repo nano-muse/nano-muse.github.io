@@ -1,0 +1,1 @@
+import{_ as o,o as c,c as d,a3 as a}from"./chunks/framework.qCVWde4n.js";const h=JSON.parse('{"title":"hub：让各台设备协作","description":"","frontmatter":{},"headers":[],"relativePath":"zh/hub.md","filePath":"zh/hub.md"}'),n={name:"zh/hub.md"};function s(t,e,r,i,p,l){return c(),d("div",null,[...e[0]||(e[0]=[a("",69)])])}const m=o(n,[["render",s]]);export{h as __pageData,m as default};

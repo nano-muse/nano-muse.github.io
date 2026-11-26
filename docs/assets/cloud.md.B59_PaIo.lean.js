@@ -1,0 +1,1 @@
+import{_ as o,o as t,c as a,a3 as s}from"./chunks/framework.qCVWde4n.js";const u=JSON.parse('{"title":"nanoMuse Cloud","description":"","frontmatter":{},"headers":[],"relativePath":"cloud.md","filePath":"cloud.md"}'),n={name:"cloud.md"};function d(r,e,i,c,h,l){return t(),a("div",null,[...e[0]||(e[0]=[s("",85)])])}const m=o(n,[["render",d]]);export{u as __pageData,m as default};

@@ -1,0 +1,1 @@
+import{_ as t,o,c as a,a3 as s}from"./chunks/framework.qCVWde4n.js";const u=JSON.parse('{"title":"Sentinel","description":"","frontmatter":{},"headers":[],"relativePath":"sentinel.md","filePath":"sentinel.md"}'),n={name:"sentinel.md"};function i(d,e,r,c,l,h){return o(),a("div",null,[...e[0]||(e[0]=[s("",58)])])}const m=t(n,[["render",i]]);export{u as __pageData,m as default};

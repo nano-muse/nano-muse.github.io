@@ -1,0 +1,1 @@
+import{_ as d,o,c as t,a3 as c}from"./chunks/framework.qCVWde4n.js";const f=JSON.parse('{"title":"界面设计与设计理由","description":"","frontmatter":{},"headers":[],"relativePath":"zh/design.md","filePath":"zh/design.md"}'),a={name:"zh/design.md"};function r(s,e,n,i,p,h){return o(),t("div",null,[...e[0]||(e[0]=[c("",35)])])}const u=d(a,[["render",r]]);export{f as __pageData,u as default};

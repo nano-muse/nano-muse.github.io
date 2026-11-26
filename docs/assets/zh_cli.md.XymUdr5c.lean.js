@@ -1,0 +1,1 @@
+import{_ as i,o as a,c as n,a3 as h}from"./chunks/framework.qCVWde4n.js";const o=JSON.parse('{"title":"命令行使用说明","description":"","frontmatter":{},"headers":[],"relativePath":"zh/cli.md","filePath":"zh/cli.md"}'),t={name:"zh/cli.md"};function e(l,s,k,p,d,F){return a(),n("div",null,[...s[0]||(s[0]=[h("",54)])])}const g=i(t,[["render",e]]);export{o as __pageData,g as default};
