@@ -1,1 +1,0 @@
-import{_ as s,o as i,c as t,a3 as o}from"./chunks/framework.qCVWde4n.js";const r=JSON.parse('{"title":"操作手机屏幕","description":"","frontmatter":{},"headers":[],"relativePath":"zh/gui.md","filePath":"zh/gui.md"}'),d={name:"zh/gui.md"};function a(n,e,p,c,h,l){return i(),t("div",null,[...e[0]||(e[0]=[o("",109)])])}const E=s(d,[["render",a]]);export{r as __pageData,E as default};
